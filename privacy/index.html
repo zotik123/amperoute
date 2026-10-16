@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Amperoute — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1b1f23;
+    --muted: #57606a;
+    --line: #d8dee4;
+    --card: #f6f8fa;
+    --accent: #0b6e4f;
+    --warn-bg: #fff8e5;
+    --warn-line: #e6c06b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111417;
+      --fg: #e6e8eb;
+      --muted: #9aa4ae;
+      --line: #2e353c;
+      --card: #1a1f24;
+      --accent: #5fd3a6;
+      --warn-bg: #2a2412;
+      --warn-line: #7a6427;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+    overflow-wrap: anywhere;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 16px 48px; }
+  header { padding: 24px 0 8px; }
+  header h1 { margin: 0; font-size: 1.6rem; line-height: 1.25; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  nav.langs {
+    position: sticky; top: 0; z-index: 1;
+    display: flex; flex-wrap: wrap; gap: 8px;
+    padding: 10px 0; margin-bottom: 8px;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  nav.langs a {
+    padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px;
+    color: var(--fg); text-decoration: none; font-size: .95rem;
+  }
+  nav.langs a:hover, nav.langs a:focus { border-color: var(--accent); color: var(--accent); }
+  section.lang { padding-top: 8px; border-top: 1px solid var(--line); margin-top: 32px; scroll-margin-top: 64px; }
+  section.lang:first-of-type { border-top: 0; margin-top: 8px; }
+  h2 { font-size: 1.35rem; margin: 16px 0 4px; }
+  h3 { font-size: 1.08rem; margin: 24px 0 6px; }
+  h4 { font-size: 1rem; margin: 16px 0 4px; }
+  p, ul { margin: 6px 0 10px; }
+  ul { padding-left: 1.25em; }
+  li { margin: 3px 0; }
+  a { color: var(--accent); }
+  .meta { color: var(--muted); margin-top: 0; }
+  .note {
+    background: var(--warn-bg); border: 1px solid var(--warn-line);
+    border-radius: 8px; padding: 10px 12px; margin: 10px 0;
+  }
+  .svc { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin: 8px 0; }
+  .svc b { display: block; }
+  .svc span { display: block; color: var(--muted); font-size: .95rem; }
+  code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .92em; background: var(--card); padding: 0 4px; border-radius: 4px; }
+  .top { font-size: .9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header id="top">
+  <h1>Amperoute — Privacy Policy</h1>
+  <p>Effective date / Дата вступления в силу / Gültig ab / Date d’effet: 2026-10-16</p>
+</header>
+<nav class="langs" aria-label="Language">
+  <a href="#en" hreflang="en">English</a>
+  <a href="#ru" hreflang="ru">Русский</a>
+  <a href="#de" hreflang="de">Deutsch</a>
+  <a href="#fr" hreflang="fr">Français</a>
+</nav>
+
+<!-- ============================== ENGLISH ============================== -->
+<section class="lang" id="en" lang="en">
+<h2>Privacy Policy</h2>
+<p class="meta">Amperoute for Android (app.amperoute) · Effective date: 16 October 2026</p>
+
+<h3>1. Summary</h3>
+<ul>
+  <li>Amperoute has no user accounts, shows no ads and contains no analytics, tracking or crash-reporting tools. We do not sell or rent any data.</li>
+  <li>We, the developer, do not run any servers and do not receive data about you. Your car profile, favorites, your prices and settings are stored only on your device.</li>
+  <li>To show the map, charging stations, address suggestions and routes, the app connects directly to the third-party services listed in section 7. These requests contain the map area, route points or the search text and, like any internet request, your IP address.</li>
+  <li>Location access is optional. The app uses your location only while it is open, never in the background.</li>
+</ul>
+
+<h3>2. Who is responsible</h3>
+<p>The controller for the app within the meaning of the EU General Data Protection Regulation (GDPR) is [DEVELOPER NAME], e-mail: [CONTACT EMAIL]. The third-party services in section 7 process the requests they receive under their own responsibility and their own privacy policies.</p>
+
+<h3>3. What the app sends, when and to whom</h3>
+<h4>3.1 Map</h4>
+<p>Whenever a map is on screen, the map library loads map tiles, fonts and icons for the visible area from OpenFreeMap. The tile coordinates show which area you are looking at.</p>
+<h4>3.2 Charging stations</h4>
+<p>When you stop moving the map at a sufficient zoom level and this area has not been loaded yet, and when you build a route, the app requests stations from the data source selected in “My car”:</p>
+<ul>
+  <li><b>OpenStreetMap:</b> a query to the Overpass API with the rectangle of the visible area (with a margin) or with rectangles along the route corridor. The app first uses overpass-api.de; if it does not respond, it tries the mirrors overpass.private.coffee and overpass.kumi.systems, and as a last resort maps.mail.ru.</li>
+  <li><b>Open Charge Map:</b> the visible area, or the route line (simplified, including its start and end points) with the search distance. Every request contains an API key: by default the app’s own key; if you entered your own key in the settings, your key is sent, which allows Open Charge Map to link these requests to your Open Charge Map account.</li>
+</ul>
+<h4>3.3 Address search</h4>
+<p>When you type at least three characters into the “From” or “To” field, the app sends the typed text, the interface language and, if you have allowed location access, your last known position rounded to 0.1° (about 10 km) to Photon, so that nearby places are suggested first.</p>
+<h4>3.4 Route</h4>
+<p>When you tap “Build route”, the coordinates of the start and the destination are sent to the OSRM routing server. If “My location” is the start (or the destination after swapping the points), this is your current precise location.</p>
+<h4>3.5 Navigation, sharing and links</h4>
+<p>Only when you tap the corresponding button:</p>
+<ul>
+  <li><b>Google Maps:</b> the destination, the charging stops as waypoints and the start point if you entered it as an address. When the route starts from your location, the start is not passed on; Google Maps determines it itself.</li>
+  <li><b>Waze:</b> the coordinates of the destination or of the first charging stop.</li>
+  <li><b>Other navigation app:</b> the coordinates and name of the station, passed to the app you choose.</li>
+  <li><b>Share:</b> the station’s name, address and an OpenStreetMap link, passed to the app you choose.</li>
+  <li><b>“Open / fix” and “Get a key”:</b> a web page on openstreetmap.org or openchargemap.org opens in your browser.</li>
+</ul>
+<p>From that moment the privacy policy of the other app or website applies.</p>
+<h4>3.6 Technical data</h4>
+<p>Every request reveals your IP address and the time of the request. Requests for stations, addresses and routes carry the identifier <code>Amperoute/1.0 (Android)</code>; map requests carry the map library’s identifier, which may include the app’s name and version and the Android version. The app does not send an advertising ID, device identifiers, your name, e-mail address or contacts.</p>
+
+<h3 id="en-location">4. Location</h3>
+<ul>
+  <li><b>Permission:</b> the app asks for approximate or precise location when you open the map. You can refuse: you can still browse the map and enter addresses manually.</li>
+  <li><b>Purposes, only while the app is open:</b> showing your position on the map; moving the map to you on first start; showing the distance to stations and sorting the list by distance; starting a route from your location; ranking address suggestions.</li>
+  <li><b>What leaves the device:</b> your precise location is sent to the OSRM routing server as the start of a route, and to Open Charge Map as part of the route line if that is your data source, only when you build a route from or to “My location”. When the map is centred on you, the area requested from the station services and the map tile server surrounds your position. Photon receives only a position rounded to about 10 km.</li>
+  <li><b>Storage:</b> the app does not store your location. It only saves the last map position (map centre and zoom) on the device so that the map reopens there; if the map was centred on you, this position is close to your location.</li>
+  <li><b>Withdrawal:</b> Android Settings → Apps → Amperoute → Permissions → Location.</li>
+</ul>
+
+<h3>5. Data stored on your device</h3>
+<ul>
+  <li><b>Settings file:</b> car profile (name, battery, consumption, charging power, connectors, charge limits), tariffs, fuel price and currency, station filters, data source, theme, your Open Charge Map API key (if entered), favorites (a copy of the station data), your prices and notes, and the last map position.</li>
+  <li><b>Cache:</b> recently loaded stations (separately for each data source) and map tiles, so that the app is faster and works when the servers are unavailable.</li>
+  <li><b>App language</b> (Android 13 and newer): stored by the Android system.</li>
+  <li>Routes, search results and your current location are kept only in memory while the app is running.</li>
+  <li><b>Backup:</b> if Android backup is enabled on your device, Android includes the settings file (not the cache) in the backup to your Google account and in the transfer to a new device. Backups are handled by Google; on Android 9 and newer with a screen lock they are end-to-end encrypted. We have no access to them.</li>
+</ul>
+
+<h3 id="en-delete">6. How to delete your data</h3>
+<ul>
+  <li>Favorites: tap the star again. Your price: open it on the station card and tap “Delete”. Settings: change them in “My car”.</li>
+  <li>All app data: Android Settings → Apps → Amperoute → Storage → Clear storage (or Clear cache for the cache only), or uninstall the app.</li>
+  <li>Backups: Android Settings → Google → Backup (managed by Google).</li>
+  <li>Data in the logs of third-party services is subject to their policies; you can contact them directly (see section 7). We do not hold such data.</li>
+</ul>
+
+<h3>7. Third-party services</h3>
+<p>These services act as independent controllers. Amperoute has no contracts with them and cannot control how they process requests.</p>
+<div class="svc"><b>OpenFreeMap — map tiles (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Hungary; delivered through the Cloudflare network. Receives: tile requests for the visible area, IP address.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a></div>
+<div class="svc"><b>Overpass API — OpenStreetMap stations (overpass-api.de)</b><span>FOSSGIS e.V., Germany. Receives: map area or route corridor, IP address.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">FOSSGIS privacy policy</a></div>
+<div class="svc"><b>Overpass mirror (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, non-profit association, Austria. Used if overpass-api.de does not respond. Receives: map area or route corridor, IP address.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
+<!-- maps.mail.ru: remove this block in all four languages (and the note in section 8) if the mirror is removed from OverpassSource.ENDPOINTS -->
+<div class="svc"><b>Overpass mirror (maps.mail.ru)</b><span>VK LLC, Russia. Used only as a last resort if the other Overpass servers do not respond. Receives: map area or route corridor, IP address.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">Mail privacy policy</a></div>
+<div class="svc"><b>Open Charge Map — stations (api.openchargemap.io)</b><span>Open Charge Map project; delivered through the Cloudflare network. Receives: map area or route line, API key, IP address.</span><a href="https://www.openchargemap.org/about/terms">Open Charge Map terms and privacy</a></div>
+<div class="svc"><b>Photon — address search (photon.komoot.io)</b><span>komoot. Receives: search text, language, position rounded to about 10 km (if allowed), IP address.</span><a href="https://www.komoot.com/privacy">komoot privacy policy</a></div>
+<div class="svc"><b>OSRM — routing (router.project-osrm.org)</b><span>FOSSGIS e.V., Germany. Receives: start and destination coordinates, IP address. According to FOSSGIS, route requests are saved in the server log.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">FOSSGIS privacy policy</a></div>
+<div class="svc"><b>Google Maps, Waze</b><span>Google. Only when you choose to open a station or route in these apps.</span><a href="https://policies.google.com/privacy">Google privacy policy</a> · <a href="https://www.waze.com/legal/privacy">Waze privacy policy</a></div>
+<div class="svc"><b>Google Play and Android</b><span>Google processes data for app installation and updates and for Android backup. If you allowed your device to share usage and diagnostics data with Google, Google may provide us with aggregated crash and performance statistics (Android vitals); this is controlled in Android settings, not by the app.</span><a href="https://policies.google.com/privacy">Google privacy policy</a></div>
+<p>Retention by these services is set by their policies; for example, Private.coffee keeps IP addresses in server logs for up to 48 hours, OpenFreeMap deletes error logs after 7 days.</p>
+
+<h3>8. Transfers outside the EU/EEA</h3>
+<ul>
+  <li>Cloudflare, Inc. (USA) delivers the traffic of OpenFreeMap and Open Charge Map. Cloudflare participates in the EU-U.S. Data Privacy Framework.</li>
+  <li class="note">maps.mail.ru is operated by VK LLC in Russia. There is no EU adequacy decision for Russia, so the protection level of the data there (map area or route corridor and IP address) may be lower, and Russian authorities may have access to it. The app uses this server only as a last resort if the other Overpass servers do not respond, and only with the OpenStreetMap data source. If you want to avoid it, choose Open Charge Map as the data source in “My car”.</li>
+  <li>Google may process data worldwide according to its privacy policy.</li>
+</ul>
+
+<h3>9. Legal bases (GDPR)</h3>
+<ul>
+  <li><b>Location:</b> your consent (Art. 6(1)(a)), given through the Android permission. You can withdraw it at any time; this does not affect processing that happened before.</li>
+  <li><b>Requests to the map, station, address and routing services</b> (IP address, area, search text, route points): necessary to provide the features you use (Art. 6(1)(b)); for automatic loading of the map and stations also our legitimate interest in a working app (Art. 6(1)(f)).</li>
+  <li><b>Storing settings on the device:</b> necessary for the features you use (Art. 6(1)(b)); storing this information on the device is strictly necessary for the service you requested (Art. 5(3) ePrivacy Directive).</li>
+  <li><b>Handing data to other apps</b> (navigation, sharing): your instruction when you tap the button.</li>
+</ul>
+
+<h3>10. Your rights</h3>
+<p>Under the GDPR you have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object (Art. 21), as well as the right to withdraw consent (Art. 7(3)) and to lodge a complaint with a supervisory authority, in particular in the EU country where you live (Art. 77). Since we do not store data about you, we usually cannot find any data relating to you, but you can always write to [CONTACT EMAIL] and we will reply within one month. For data held by the third-party services, please contact them directly.</p>
+
+<h3>11. Security</h3>
+<p>All connections of the app use encrypted HTTPS. Data on the device is protected by the Android app sandbox. The developer does not operate servers that could store your data.</p>
+
+<h3>12. Children</h3>
+<p>Amperoute is intended for adult drivers and is not directed at children. We do not knowingly process data of children.</p>
+
+<h3>13. Changes to this policy</h3>
+<p>We will publish changes on this page and update the effective date. We will point out significant changes in the release notes of the app update.</p>
+
+<h3>14. Contact</h3>
+<p>[DEVELOPER NAME] · [CONTACT EMAIL]</p>
+<p class="top"><a href="#top">↑</a></p>
+</section>
+
+<!-- ============================== РУССКИЙ ============================== -->
+<section class="lang" id="ru" lang="ru">
+<h2>Политика конфиденциальности</h2>
+<p class="meta">Amperoute для Android (app.amperoute) · Дата вступления в силу: 16 октября 2026 г.</p>
+
+<h3>1. Коротко</h3>
+<ul>
+  <li>В Amperoute нет аккаунтов, рекламы, аналитики, трекеров и сервисов отчётов о сбоях. Мы не продаём и не передаём данные за плату.</li>
+  <li>У нас, разработчика, нет своих серверов, и данные о вас к нам не поступают. Профиль авто, избранное, ваши цены и настройки хранятся только на вашем устройстве.</li>
+  <li>Чтобы показать карту, зарядные станции, подсказки адресов и маршруты, приложение напрямую обращается к сторонним сервисам из раздела 7. В запросах передаются область карты, точки маршрута или текст поиска и, как при любом запросе в интернет, ваш IP-адрес.</li>
+  <li>Доступ к геолокации необязателен. Приложение использует местоположение только пока открыто и никогда — в фоне.</li>
+</ul>
+
+<h3>2. Кто отвечает за обработку</h3>
+<p>Ответственный за обработку данных в приложении в смысле Общего регламента ЕС по защите данных (GDPR) — [DEVELOPER NAME], e-mail: [CONTACT EMAIL]. Сторонние сервисы из раздела 7 обрабатывают полученные запросы под свою ответственность и по своим политикам конфиденциальности.</p>
+
+<h3>3. Что, когда и кому отправляет приложение</h3>
+<h4>3.1 Карта</h4>
+<p>Пока карта на экране, картографическая библиотека загружает с OpenFreeMap тайлы, шрифты и значки для видимой области. По координатам тайлов видно, какую область вы смотрите.</p>
+<h4>3.2 Зарядные станции</h4>
+<p>Когда вы останавливаете карту на достаточном масштабе и эта область ещё не загружена, а также при построении маршрута приложение запрашивает станции у источника данных, выбранного в разделе «Моё авто»:</p>
+<ul>
+  <li><b>OpenStreetMap:</b> запрос к Overpass API с прямоугольником видимой области (с запасом по краям) или с прямоугольниками вдоль коридора маршрута. Сначала используется overpass-api.de; если он не отвечает — зеркала overpass.private.coffee и overpass.kumi.systems, в крайнем случае — maps.mail.ru.</li>
+  <li><b>Open Charge Map:</b> видимая область или линия маршрута (упрощённая, вместе с начальной и конечной точками) и расстояние поиска. В каждом запросе передаётся API-ключ: по умолчанию ключ приложения; если вы указали свой ключ в настройках, отправляется он, и Open Charge Map может связать эти запросы с вашим аккаунтом Open Charge Map.</li>
+</ul>
+<h4>3.3 Поиск адресов</h4>
+<p>Когда вы вводите не меньше трёх символов в поле «Откуда» или «Куда», приложение отправляет в Photon введённый текст, язык интерфейса и, если вы разрешили геолокацию, последнее известное местоположение, округлённое до 0,1° (около 10 км), чтобы сначала предлагать места поблизости.</p>
+<h4>3.4 Маршрут</h4>
+<p>По нажатию «Построить маршрут» координаты начала и конца маршрута отправляются на сервер маршрутизации OSRM. Если началом (или, после перестановки точек, концом) маршрута выбрано «Моё местоположение», это ваше текущее точное местоположение.</p>
+<h4>3.5 Навигация, «Поделиться» и ссылки</h4>
+<p>Только когда вы нажимаете соответствующую кнопку:</p>
+<ul>
+  <li><b>Google Maps:</b> пункт назначения, зарядки как промежуточные точки и точка старта, если вы ввели её адресом. Если маршрут начинается из вашего местоположения, старт не передаётся — Google Maps определит его сам.</li>
+  <li><b>Waze:</b> координаты пункта назначения или первой зарядки.</li>
+  <li><b>Другой навигатор:</b> координаты и название станции — в выбранное вами приложение.</li>
+  <li><b>«Поделиться»:</b> название, адрес станции и ссылка на OpenStreetMap — в выбранное вами приложение.</li>
+  <li><b>«Открыть / исправить» и «Получить ключ»:</b> в браузере открывается страница openstreetmap.org или openchargemap.org.</li>
+</ul>
+<p>С этого момента действует политика конфиденциальности другого приложения или сайта.</p>
+<h4>3.6 Технические данные</h4>
+<p>Любой запрос раскрывает ваш IP-адрес и время запроса. Запросы станций, адресов и маршрутов содержат идентификатор <code>Amperoute/1.0 (Android)</code>; запросы карты — идентификатор картографической библиотеки, в котором могут быть название и версия приложения и версия Android. Рекламный идентификатор, идентификаторы устройства, ваше имя, e-mail и контакты приложение не отправляет.</p>
+
+<h3 id="ru-location">4. Геолокация</h3>
+<ul>
+  <li><b>Разрешение:</b> приложение запрашивает приблизительное или точное местоположение, когда вы открываете карту. Можно отказаться: карта по-прежнему работает, адреса вводятся вручную.</li>
+  <li><b>Зачем, и только пока приложение открыто:</b> показать вас на карте; при первом запуске перенести карту к вам; показать расстояние до станций и отсортировать список по расстоянию; построить маршрут из вашего местоположения; ранжировать подсказки адресов.</li>
+  <li><b>Что уходит с устройства:</b> точное местоположение передаётся серверу маршрутизации OSRM как начало маршрута и, если источник данных — Open Charge Map, в Open Charge Map как часть линии маршрута — только когда вы строите маршрут из «Моего местоположения» или в него. Когда карта центрирована на вас, область, которую приложение запрашивает у сервисов станций и сервера тайлов, окружает ваше местоположение. Photon получает только координаты, округлённые примерно до 10 км.</li>
+  <li><b>Хранение:</b> приложение не хранит ваше местоположение. На устройстве сохраняется только последняя позиция карты (центр и масштаб), чтобы карта открылась там же; если карта была центрирована на вас, эта позиция близка к вашему местоположению.</li>
+  <li><b>Отзыв разрешения:</b> Настройки Android → Приложения → Amperoute → Разрешения → Местоположение.</li>
+</ul>
+
+<h3>5. Что хранится на устройстве</h3>
+<ul>
+  <li><b>Файл настроек:</b> профиль авто (название, батарея, расход, мощность зарядки, разъёмы, пределы заряда), тарифы, цена топлива и валюта, фильтры станций, источник данных, тема, ваш API-ключ Open Charge Map (если указан), избранное (копия данных станций), ваши цены и заметки, последняя позиция карты.</li>
+  <li><b>Кэш:</b> недавно загруженные станции (отдельно для каждого источника) и тайлы карты — чтобы приложение работало быстрее и когда серверы недоступны.</li>
+  <li><b>Язык приложения</b> (Android 13 и новее) хранит система Android.</li>
+  <li>Маршрут, результаты поиска и текущее местоположение находятся только в памяти, пока приложение запущено.</li>
+  <li><b>Резервное копирование:</b> если на устройстве включено резервное копирование Android, система включает файл настроек (но не кэш) в резервную копию в вашем аккаунте Google и в перенос на новое устройство. Копиями управляет Google; на Android 9 и новее при заданной блокировке экрана они защищены сквозным шифрованием. У нас доступа к ним нет.</li>
+</ul>
+
+<h3 id="ru-delete">6. Как удалить данные</h3>
+<ul>
+  <li>Избранное: нажмите звёздочку ещё раз. Свою цену: откройте её в карточке станции и нажмите «Удалить». Настройки: измените в разделе «Моё авто».</li>
+  <li>Все данные приложения: Настройки Android → Приложения → Amperoute → Хранилище → Очистить хранилище (или Очистить кэш — только кэш), либо удалите приложение.</li>
+  <li>Резервные копии: Настройки Android → Google → Резервное копирование (управляет Google).</li>
+  <li>Данные в журналах сторонних сервисов хранятся по их правилам; к ним можно обратиться напрямую (раздел 7). У нас таких данных нет.</li>
+</ul>
+
+<h3>7. Сторонние сервисы</h3>
+<p>Эти сервисы действуют как самостоятельные ответственные за обработку. У Amperoute нет с ними договоров, и мы не можем влиять на то, как они обрабатывают запросы.</p>
+<div class="svc"><b>OpenFreeMap — тайлы карты (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Венгрия; доставка через сеть Cloudflare. Получает: запросы тайлов видимой области, IP-адрес.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">политика Cloudflare</a></div>
+<div class="svc"><b>Overpass API — станции OpenStreetMap (overpass-api.de)</b><span>FOSSGIS e.V., Германия. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">политика FOSSGIS</a></div>
+<div class="svc"><b>Зеркало Overpass (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, некоммерческое объединение, Австрия. Используется, если overpass-api.de не отвечает. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
+<!-- maps.mail.ru: удалить этот блок (и пункт в разделе 8), если зеркало убрано из OverpassSource.ENDPOINTS -->
+<div class="svc"><b>Зеркало Overpass (maps.mail.ru)</b><span>ООО «ВК», Россия. Используется только в крайнем случае, если остальные серверы Overpass не отвечают. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">политика конфиденциальности Mail</a></div>
+<div class="svc"><b>Open Charge Map — станции (api.openchargemap.io)</b><span>Проект Open Charge Map; доставка через сеть Cloudflare. Получает: область карты или линию маршрута, API-ключ, IP-адрес.</span><a href="https://www.openchargemap.org/about/terms">условия и политика Open Charge Map</a></div>
+<div class="svc"><b>Photon — поиск адресов (photon.komoot.io)</b><span>komoot. Получает: текст поиска, язык, координаты, округлённые примерно до 10 км (если разрешено), IP-адрес.</span><a href="https://www.komoot.com/privacy">политика komoot</a></div>
+<div class="svc"><b>OSRM — маршруты (router.project-osrm.org)</b><span>FOSSGIS e.V., Германия. Получает: координаты начала и конца маршрута, IP-адрес. По данным FOSSGIS, запросы маршрутов сохраняются в журнале сервера.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">политика FOSSGIS</a></div>
+<div class="svc"><b>Google Maps, Waze</b><span>Google. Только если вы сами открываете станцию или маршрут в этих приложениях.</span><a href="https://policies.google.com/privacy">политика Google</a> · <a href="https://www.waze.com/legal/privacy">политика Waze</a></div>
+<div class="svc"><b>Google Play и Android</b><span>Google обрабатывает данные для установки и обновления приложения и для резервного копирования Android. Если вы разрешили устройству отправлять в Google данные об использовании и диагностике, Google может передавать нам обобщённую статистику сбоев и производительности (Android vitals); это настраивается в Android, а не в приложении.</span><a href="https://policies.google.com/privacy">политика Google</a></div>
+<p>Сроки хранения у этих сервисов определяют их политики; например, Private.coffee хранит IP-адреса в журналах сервера до 48 часов, OpenFreeMap удаляет журналы ошибок через 7 дней.</p>
+
+<h3>8. Передача данных за пределы ЕС/ЕЭЗ</h3>
+<ul>
+  <li>Трафик OpenFreeMap и Open Charge Map доставляет Cloudflare, Inc. (США). Cloudflare участвует в EU-U.S. Data Privacy Framework.</li>
+  <li class="note">maps.mail.ru обслуживает ООО «ВК» в России. Для России нет решения ЕС об адекватности защиты, поэтому уровень защиты данных там (область карты или коридор маршрута и IP-адрес) может быть ниже и к ним могут получить доступ российские органы власти. Приложение обращается к этому серверу только в крайнем случае, если остальные серверы Overpass не отвечают, и только с источником данных OpenStreetMap. Чтобы исключить его, выберите в разделе «Моё авто» источник Open Charge Map.</li>
+  <li>Google может обрабатывать данные по всему миру согласно своей политике конфиденциальности.</li>
+</ul>
+
+<h3>9. Правовые основания (GDPR)</h3>
+<ul>
+  <li><b>Геолокация:</b> ваше согласие (ст. 6(1)(a)), данное через разрешение Android. Его можно отозвать в любой момент; это не влияет на обработку, которая была до отзыва.</li>
+  <li><b>Запросы к сервисам карты, станций, адресов и маршрутов</b> (IP-адрес, область, текст поиска, точки маршрута): необходимы, чтобы предоставить функции, которыми вы пользуетесь (ст. 6(1)(b)); для автоматической загрузки карты и станций — также наш законный интерес в работающем приложении (ст. 6(1)(f)).</li>
+  <li><b>Хранение настроек на устройстве:</b> необходимо для функций, которыми вы пользуетесь (ст. 6(1)(b)); сохранение этих сведений на устройстве строго необходимо для запрошенной вами услуги (ст. 5(3) Директивы ePrivacy).</li>
+  <li><b>Передача данных другим приложениям</b> (навигация, «Поделиться»): ваше указание, когда вы нажимаете кнопку.</li>
+</ul>
+
+<h3>10. Ваши права</h3>
+<p>По GDPR у вас есть право на доступ (ст. 15), исправление (ст. 16), удаление (ст. 17), ограничение обработки (ст. 18), переносимость данных (ст. 20) и возражение (ст. 21), право отозвать согласие (ст. 7(3)) и подать жалобу в надзорный орган, в частности в стране ЕС, где вы живёте (ст. 77). Так как мы не храним данные о вас, обычно мы не можем найти данные, относящиеся к вам, но вы всегда можете написать на [CONTACT EMAIL] — мы ответим в течение месяца. По данным, которые есть у сторонних сервисов, обращайтесь к ним напрямую.</p>
+
+<h3>11. Безопасность</h3>
+<p>Все соединения приложения используют шифрование HTTPS. Данные на устройстве защищены песочницей приложений Android. У разработчика нет серверов, на которых могли бы храниться ваши данные.</p>
+
+<h3>12. Дети</h3>
+<p>Amperoute предназначено для взрослых водителей и не ориентировано на детей. Мы сознательно не обрабатываем данные детей.</p>
+
+<h3>13. Изменения политики</h3>
+<p>Изменения мы публикуем на этой странице и обновляем дату вступления в силу. О существенных изменениях сообщим в описании обновления приложения.</p>
+
+<h3>14. Контакты</h3>
+<p>[DEVELOPER NAME] · [CONTACT EMAIL]</p>
+<p class="top"><a href="#top">↑</a></p>
+</section>
+
+<!-- ============================== DEUTSCH ============================== -->
+<section class="lang" id="de" lang="de">
+<h2>Datenschutzerklärung</h2>
+<p class="meta">Amperoute für Android (app.amperoute) · Gültig ab: 16. Oktober 2026</p>
+
+<h3>1. Kurz zusammengefasst</h3>
+<ul>
+  <li>Amperoute hat keine Nutzerkonten, zeigt keine Werbung und enthält keine Analyse-, Tracking- oder Absturzberichts-Tools. Wir verkaufen oder vermieten keine Daten.</li>
+  <li>Wir als Entwickler betreiben keine Server und erhalten keine Daten über Sie. Fahrzeugprofil, Favoriten, Ihre Preise und Einstellungen werden nur auf Ihrem Gerät gespeichert.</li>
+  <li>Um Karte, Ladestationen, Adressvorschläge und Routen anzuzeigen, verbindet sich die App direkt mit den Drittdiensten aus Abschnitt 7. Diese Anfragen enthalten den Kartenausschnitt, Routenpunkte oder den Suchtext und, wie jede Internetanfrage, Ihre IP-Adresse.</li>
+  <li>Der Standortzugriff ist freiwillig. Die App nutzt Ihren Standort nur, solange sie geöffnet ist, nie im Hintergrund.</li>
+</ul>
+
+<h3>2. Verantwortlicher</h3>
+<p>Verantwortlicher für die App im Sinne der Datenschutz-Grundverordnung (DSGVO) ist [DEVELOPER NAME], E-Mail: [CONTACT EMAIL]. Die Drittdienste aus Abschnitt 7 verarbeiten die erhaltenen Anfragen in eigener Verantwortung nach ihren eigenen Datenschutzerklärungen.</p>
+
+<h3>3. Was die App wann an wen sendet</h3>
+<h4>3.1 Karte</h4>
+<p>Solange eine Karte angezeigt wird, lädt die Kartenbibliothek Kartenkacheln, Schriften und Symbole für den sichtbaren Bereich von OpenFreeMap. An den Kachelkoordinaten ist erkennbar, welchen Bereich Sie ansehen.</p>
+<h4>3.2 Ladestationen</h4>
+<p>Wenn Sie die Karte bei ausreichender Vergrößerung anhalten und dieser Bereich noch nicht geladen ist sowie bei der Routenberechnung fragt die App Stationen bei der Datenquelle ab, die unter „Mein Auto“ gewählt ist:</p>
+<ul>
+  <li><b>OpenStreetMap:</b> eine Anfrage an die Overpass API mit dem Rechteck des sichtbaren Bereichs (mit Rand) oder mit Rechtecken entlang des Routenkorridors. Zuerst wird overpass-api.de genutzt; antwortet der Server nicht, die Spiegel overpass.private.coffee und overpass.kumi.systems, als letzte Möglichkeit maps.mail.ru.</li>
+  <li><b>Open Charge Map:</b> der sichtbare Bereich oder die Routenlinie (vereinfacht, einschließlich Start- und Endpunkt) mit dem Suchabstand. Jede Anfrage enthält einen API-Schlüssel: standardmäßig den Schlüssel der App; haben Sie in den Einstellungen einen eigenen Schlüssel eingegeben, wird dieser gesendet, und Open Charge Map kann die Anfragen Ihrem Open-Charge-Map-Konto zuordnen.</li>
+</ul>
+<h4>3.3 Adresssuche</h4>
+<p>Wenn Sie mindestens drei Zeichen in das Feld „Von“ oder „Nach“ eingeben, sendet die App den eingegebenen Text, die Sprache der Oberfläche und, falls Sie den Standortzugriff erlaubt haben, Ihren zuletzt bekannten Standort, gerundet auf 0,1° (etwa 10 km), an Photon, damit Orte in der Nähe zuerst vorgeschlagen werden.</p>
+<h4>3.4 Route</h4>
+<p>Wenn Sie auf „Route berechnen“ tippen, werden die Koordinaten von Start und Ziel an den Routing-Server OSRM gesendet. Ist „Mein Standort“ der Start (oder nach dem Tauschen das Ziel), ist das Ihr aktueller genauer Standort.</p>
+<h4>3.5 Navigation, Teilen und Links</h4>
+<p>Nur wenn Sie auf die entsprechende Schaltfläche tippen:</p>
+<ul>
+  <li><b>Google Maps:</b> das Ziel, die Ladestopps als Zwischenziele und der Startpunkt, wenn Sie ihn als Adresse eingegeben haben. Beginnt die Route an Ihrem Standort, wird der Start nicht übergeben; Google Maps ermittelt ihn selbst.</li>
+  <li><b>Waze:</b> die Koordinaten des Ziels oder des ersten Ladestopps.</li>
+  <li><b>Andere Navigations-App:</b> Koordinaten und Name der Station an die von Ihnen gewählte App.</li>
+  <li><b>Teilen:</b> Name und Adresse der Station und ein OpenStreetMap-Link an die von Ihnen gewählte App.</li>
+  <li><b>„Öffnen / korrigieren“ und „Schlüssel anfordern“:</b> Im Browser öffnet sich eine Seite auf openstreetmap.org oder openchargemap.org.</li>
+</ul>
+<p>Ab diesem Moment gilt die Datenschutzerklärung der anderen App oder Website.</p>
+<h4>3.6 Technische Daten</h4>
+<p>Jede Anfrage übermittelt Ihre IP-Adresse und den Zeitpunkt. Anfragen nach Stationen, Adressen und Routen tragen die Kennung <code>Amperoute/1.0 (Android)</code>; Kartenanfragen die Kennung der Kartenbibliothek, die Name und Version der App sowie die Android-Version enthalten kann. Werbe-ID, Gerätekennungen, Ihr Name, Ihre E-Mail-Adresse oder Kontakte werden nicht gesendet.</p>
+
+<h3 id="de-location">4. Standort</h3>
+<ul>
+  <li><b>Berechtigung:</b> Die App fragt beim Öffnen der Karte nach dem ungefähren oder genauen Standort. Sie können ablehnen: Die Karte funktioniert weiter, Adressen geben Sie dann von Hand ein.</li>
+  <li><b>Zwecke, nur während die App geöffnet ist:</b> Ihre Position auf der Karte anzeigen; beim ersten Start die Karte zu Ihnen bewegen; die Entfernung zu Stationen anzeigen und die Liste danach sortieren; eine Route ab Ihrem Standort starten; Adressvorschläge sortieren.</li>
+  <li><b>Was das Gerät verlässt:</b> Ihr genauer Standort geht nur dann an den Routing-Server OSRM als Start der Route und, wenn Open Charge Map Ihre Datenquelle ist, als Teil der Routenlinie an Open Charge Map, wenn Sie eine Route ab oder zu „Mein Standort“ berechnen. Ist die Karte auf Sie zentriert, umgibt der Bereich, den die App bei den Stationsdiensten und beim Kachelserver anfragt, Ihre Position. Photon erhält nur eine auf etwa 10 km gerundete Position.</li>
+  <li><b>Speicherung:</b> Die App speichert Ihren Standort nicht. Gespeichert wird nur die letzte Kartenposition (Mittelpunkt und Zoom), damit die Karte dort wieder öffnet; war die Karte auf Sie zentriert, liegt diese Position nahe an Ihrem Standort.</li>
+  <li><b>Widerruf:</b> Android-Einstellungen → Apps → Amperoute → Berechtigungen → Standort.</li>
+</ul>
+
+<h3>5. Auf Ihrem Gerät gespeicherte Daten</h3>
+<ul>
+  <li><b>Einstellungsdatei:</b> Fahrzeugprofil (Name, Akku, Verbrauch, Ladeleistung, Anschlüsse, Ladegrenzen), Tarife, Kraftstoffpreis und Währung, Stationsfilter, Datenquelle, Design, Ihr Open-Charge-Map-API-Schlüssel (falls eingegeben), Favoriten (Kopie der Stationsdaten), Ihre Preise und Notizen sowie die letzte Kartenposition.</li>
+  <li><b>Cache:</b> zuletzt geladene Stationen (getrennt nach Datenquelle) und Kartenkacheln, damit die App schneller ist und auch funktioniert, wenn die Server nicht erreichbar sind.</li>
+  <li><b>App-Sprache</b> (ab Android 13): wird vom Android-System gespeichert.</li>
+  <li>Routen, Suchergebnisse und Ihr aktueller Standort befinden sich nur im Arbeitsspeicher, solange die App läuft.</li>
+  <li><b>Sicherung:</b> Ist die Android-Sicherung auf Ihrem Gerät aktiviert, nimmt Android die Einstellungsdatei (nicht den Cache) in die Sicherung in Ihrem Google-Konto und in die Übertragung auf ein neues Gerät auf. Sicherungen verwaltet Google; ab Android 9 mit Displaysperre sind sie Ende-zu-Ende-verschlüsselt. Wir haben keinen Zugriff darauf.</li>
+</ul>
+
+<h3 id="de-delete">6. Daten löschen</h3>
+<ul>
+  <li>Favoriten: erneut auf den Stern tippen. Eigener Preis: in der Stationskarte öffnen und „Löschen“ tippen. Einstellungen: unter „Mein Auto“ ändern.</li>
+  <li>Alle App-Daten: Android-Einstellungen → Apps → Amperoute → Speicher → Speicher löschen (oder Cache leeren nur für den Cache) oder die App deinstallieren.</li>
+  <li>Sicherungen: Android-Einstellungen → Google → Sicherung (von Google verwaltet).</li>
+  <li>Daten in Protokollen der Drittdienste unterliegen deren Regeln; Sie können sich direkt an sie wenden (Abschnitt 7). Wir haben solche Daten nicht.</li>
+</ul>
+
+<h3>7. Drittdienste</h3>
+<p>Diese Dienste handeln als eigenständige Verantwortliche. Amperoute hat mit ihnen keine Verträge und kann nicht beeinflussen, wie sie Anfragen verarbeiten.</p>
+<div class="svc"><b>OpenFreeMap — Kartenkacheln (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Ungarn; Auslieferung über das Cloudflare-Netz. Erhält: Kachelanfragen für den sichtbaren Bereich, IP-Adresse.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Datenschutz Cloudflare</a></div>
+<div class="svc"><b>Overpass API — Stationen aus OpenStreetMap (overpass-api.de)</b><span>FOSSGIS e.V., Deutschland. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">Datenschutzerklärung FOSSGIS</a></div>
+<div class="svc"><b>Overpass-Spiegel (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, gemeinnütziger Verein, Österreich. Wird genutzt, wenn overpass-api.de nicht antwortet. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
+<!-- maps.mail.ru: diesen Block (und den Punkt in Abschnitt 8) entfernen, falls der Spiegel aus OverpassSource.ENDPOINTS entfernt wird -->
+<div class="svc"><b>Overpass-Spiegel (maps.mail.ru)</b><span>VK LLC, Russland. Wird nur als letzte Möglichkeit genutzt, wenn die anderen Overpass-Server nicht antworten. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">Datenschutzerklärung Mail</a></div>
+<div class="svc"><b>Open Charge Map — Stationen (api.openchargemap.io)</b><span>Projekt Open Charge Map; Auslieferung über das Cloudflare-Netz. Erhält: Kartenausschnitt oder Routenlinie, API-Schlüssel, IP-Adresse.</span><a href="https://www.openchargemap.org/about/terms">Bedingungen und Datenschutz Open Charge Map</a></div>
+<div class="svc"><b>Photon — Adresssuche (photon.komoot.io)</b><span>komoot. Erhält: Suchtext, Sprache, auf etwa 10 km gerundete Position (falls erlaubt), IP-Adresse.</span><a href="https://www.komoot.com/privacy">Datenschutzerklärung komoot</a></div>
+<div class="svc"><b>OSRM — Routen (router.project-osrm.org)</b><span>FOSSGIS e.V., Deutschland. Erhält: Koordinaten von Start und Ziel, IP-Adresse. Laut FOSSGIS werden Routenanfragen im Serverprotokoll gespeichert.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">Datenschutzerklärung FOSSGIS</a></div>
+<div class="svc"><b>Google Maps, Waze</b><span>Google. Nur wenn Sie eine Station oder Route selbst in diesen Apps öffnen.</span><a href="https://policies.google.com/privacy">Datenschutzerklärung Google</a> · <a href="https://www.waze.com/legal/privacy">Datenschutzerklärung Waze</a></div>
+<div class="svc"><b>Google Play und Android</b><span>Google verarbeitet Daten für Installation und Updates der App sowie für die Android-Sicherung. Wenn Sie Ihrem Gerät erlaubt haben, Nutzungs- und Diagnosedaten an Google zu senden, kann Google uns zusammengefasste Absturz- und Leistungsstatistiken (Android vitals) bereitstellen; das wird in den Android-Einstellungen gesteuert, nicht in der App.</span><a href="https://policies.google.com/privacy">Datenschutzerklärung Google</a></div>
+<p>Die Speicherdauer bei diesen Diensten richtet sich nach deren Regeln; zum Beispiel speichert Private.coffee IP-Adressen in Serverprotokollen bis zu 48 Stunden, OpenFreeMap löscht Fehlerprotokolle nach 7 Tagen.</p>
+
+<h3>8. Übermittlung außerhalb der EU/des EWR</h3>
+<ul>
+  <li>Den Datenverkehr von OpenFreeMap und Open Charge Map liefert Cloudflare, Inc. (USA) aus. Cloudflare nimmt am EU-U.S. Data Privacy Framework teil.</li>
+  <li class="note">maps.mail.ru wird von VK LLC in Russland betrieben. Für Russland gibt es keinen Angemessenheitsbeschluss der EU; das Schutzniveau für die Daten dort (Kartenausschnitt oder Routenkorridor und IP-Adresse) kann daher niedriger sein, und russische Behörden können darauf zugreifen. Die App nutzt diesen Server nur als letzte Möglichkeit, wenn die anderen Overpass-Server nicht antworten, und nur mit der Datenquelle OpenStreetMap. Wenn Sie ihn vermeiden möchten, wählen Sie unter „Mein Auto“ die Datenquelle Open Charge Map.</li>
+  <li>Google kann Daten gemäß seiner Datenschutzerklärung weltweit verarbeiten.</li>
+</ul>
+
+<h3>9. Rechtsgrundlagen (DSGVO)</h3>
+<ul>
+  <li><b>Standort:</b> Ihre Einwilligung (Art. 6 Abs. 1 lit. a), erteilt über die Android-Berechtigung. Sie können sie jederzeit widerrufen; die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt unberührt.</li>
+  <li><b>Anfragen an Karten-, Stations-, Adress- und Routingdienste</b> (IP-Adresse, Bereich, Suchtext, Routenpunkte): erforderlich, um die von Ihnen genutzten Funktionen bereitzustellen (Art. 6 Abs. 1 lit. b); für das automatische Laden von Karte und Stationen außerdem unser berechtigtes Interesse an einer funktionierenden App (Art. 6 Abs. 1 lit. f).</li>
+  <li><b>Speicherung der Einstellungen auf dem Gerät:</b> erforderlich für die von Ihnen genutzten Funktionen (Art. 6 Abs. 1 lit. b); die Speicherung dieser Informationen auf dem Gerät ist für den von Ihnen gewünschten Dienst unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG, Art. 5 Abs. 3 ePrivacy-Richtlinie).</li>
+  <li><b>Weitergabe an andere Apps</b> (Navigation, Teilen): Ihre Anweisung durch Tippen auf die Schaltfläche.</li>
+</ul>
+
+<h3>10. Ihre Rechte</h3>
+<p>Nach der DSGVO haben Sie das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21), das Recht, eine Einwilligung zu widerrufen (Art. 7 Abs. 3), sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde, insbesondere in dem EU-Land, in dem Sie leben (Art. 77). Da wir keine Daten über Sie speichern, können wir in der Regel keine Daten zu Ihnen finden; Sie können uns aber jederzeit unter [CONTACT EMAIL] schreiben, wir antworten innerhalb eines Monats. Zu Daten bei den Drittdiensten wenden Sie sich bitte direkt an diese.</p>
+
+<h3>11. Sicherheit</h3>
+<p>Alle Verbindungen der App sind per HTTPS verschlüsselt. Daten auf dem Gerät schützt die App-Sandbox von Android. Der Entwickler betreibt keine Server, auf denen Ihre Daten gespeichert werden könnten.</p>
+
+<h3>12. Kinder</h3>
+<p>Amperoute richtet sich an erwachsene Autofahrer und nicht an Kinder. Wir verarbeiten nicht wissentlich Daten von Kindern.</p>
+
+<h3>13. Änderungen</h3>
+<p>Änderungen veröffentlichen wir auf dieser Seite und aktualisieren das Datum. Auf wesentliche Änderungen weisen wir in den Versionshinweisen des App-Updates hin.</p>
+
+<h3>14. Kontakt</h3>
+<p>[DEVELOPER NAME] · [CONTACT EMAIL]</p>
+<p class="top"><a href="#top">↑</a></p>
+</section>
+
+<!-- ============================== FRANÇAIS ============================== -->
+<section class="lang" id="fr" lang="fr">
+<h2>Politique de confidentialité</h2>
+<p class="meta">Amperoute pour Android (app.amperoute) · Date d’effet : 16 octobre 2026</p>
+
+<h3>1. En bref</h3>
+<ul>
+  <li>Amperoute n’a pas de comptes utilisateur, n’affiche pas de publicité et ne contient aucun outil d’analyse d’audience, de pistage ou de rapport de plantage. Nous ne vendons ni ne louons aucune donnée.</li>
+  <li>Nous, le développeur, n’exploitons aucun serveur et ne recevons aucune donnée vous concernant. Le profil du véhicule, les favoris, vos prix et vos réglages sont enregistrés uniquement sur votre appareil.</li>
+  <li>Pour afficher la carte, les bornes, les suggestions d’adresses et les itinéraires, l’app se connecte directement aux services tiers listés à la section 7. Ces requêtes contiennent la zone de carte, les points de l’itinéraire ou le texte recherché et, comme toute requête sur Internet, votre adresse IP.</li>
+  <li>L’accès à la position est facultatif. L’app n’utilise votre position que lorsqu’elle est ouverte, jamais en arrière-plan.</li>
+</ul>
+
+<h3>2. Responsable du traitement</h3>
+<p>Le responsable du traitement pour l’app au sens du Règlement général sur la protection des données (RGPD) est [DEVELOPER NAME], e-mail : [CONTACT EMAIL]. Les services tiers de la section 7 traitent les requêtes qu’ils reçoivent sous leur propre responsabilité, selon leurs propres politiques de confidentialité.</p>
+
+<h3>3. Ce que l’app envoie, quand et à qui</h3>
+<h4>3.1 Carte</h4>
+<p>Tant qu’une carte est affichée, la bibliothèque cartographique charge depuis OpenFreeMap les tuiles, polices et icônes de la zone visible. Les coordonnées des tuiles indiquent quelle zone vous regardez.</p>
+<h4>3.2 Bornes de recharge</h4>
+<p>Lorsque vous arrêtez de déplacer la carte à un niveau de zoom suffisant et que cette zone n’est pas encore chargée, ainsi que lors du calcul d’un itinéraire, l’app demande les bornes à la source de données choisie dans « Ma voiture » :</p>
+<ul>
+  <li><b>OpenStreetMap :</b> une requête à l’API Overpass avec le rectangle de la zone visible (avec une marge) ou des rectangles le long du couloir de l’itinéraire. L’app utilise d’abord overpass-api.de ; s’il ne répond pas, les miroirs overpass.private.coffee et overpass.kumi.systems, et en dernier recours maps.mail.ru.</li>
+  <li><b>Open Charge Map :</b> la zone visible, ou la ligne de l’itinéraire (simplifiée, avec ses points de départ et d’arrivée) et la distance de recherche. Chaque requête contient une clé API : par défaut celle de l’app ; si vous avez saisi votre propre clé dans les réglages, c’est elle qui est envoyée, ce qui permet à Open Charge Map de relier ces requêtes à votre compte Open Charge Map.</li>
+</ul>
+<h4>3.3 Recherche d’adresses</h4>
+<p>Lorsque vous saisissez au moins trois caractères dans le champ « Départ » ou « Arrivée », l’app envoie à Photon le texte saisi, la langue de l’interface et, si vous avez autorisé la localisation, votre dernière position connue arrondie à 0,1° (environ 10 km), afin de proposer d’abord les lieux proches.</p>
+<h4>3.4 Itinéraire</h4>
+<p>Lorsque vous touchez « Calculer l’itinéraire », les coordonnées du départ et de l’arrivée sont envoyées au serveur de calcul d’itinéraire OSRM. Si « Ma position » est le départ (ou l’arrivée après inversion des points), il s’agit de votre position précise actuelle.</p>
+<h4>3.5 Navigation, partage et liens</h4>
+<p>Uniquement lorsque vous touchez le bouton correspondant :</p>
+<ul>
+  <li><b>Google Maps :</b> la destination, les arrêts de recharge comme étapes et le point de départ si vous l’avez saisi comme adresse. Si l’itinéraire part de votre position, le départ n’est pas transmis ; Google Maps le détermine lui-même.</li>
+  <li><b>Waze :</b> les coordonnées de la destination ou du premier arrêt de recharge.</li>
+  <li><b>Autre app de navigation :</b> les coordonnées et le nom de la borne, transmis à l’app que vous choisissez.</li>
+  <li><b>Partager :</b> le nom et l’adresse de la borne et un lien OpenStreetMap, transmis à l’app que vous choisissez.</li>
+  <li><b>« Ouvrir / corriger » et « Obtenir une clé » :</b> une page d’openstreetmap.org ou d’openchargemap.org s’ouvre dans votre navigateur.</li>
+</ul>
+<p>À partir de ce moment, la politique de confidentialité de l’autre app ou du site s’applique.</p>
+<h4>3.6 Données techniques</h4>
+<p>Chaque requête révèle votre adresse IP et l’heure de la requête. Les requêtes de bornes, d’adresses et d’itinéraires portent l’identifiant <code>Amperoute/1.0 (Android)</code> ; les requêtes de carte portent l’identifiant de la bibliothèque cartographique, qui peut inclure le nom et la version de l’app et la version d’Android. L’app n’envoie ni identifiant publicitaire, ni identifiants de l’appareil, ni votre nom, votre adresse e-mail ou vos contacts.</p>
+
+<h3 id="fr-location">4. Localisation</h3>
+<ul>
+  <li><b>Autorisation :</b> l’app demande la position approximative ou précise à l’ouverture de la carte. Vous pouvez refuser : la carte reste utilisable et vous saisissez les adresses manuellement.</li>
+  <li><b>Finalités, uniquement lorsque l’app est ouverte :</b> afficher votre position sur la carte ; au premier lancement, centrer la carte sur vous ; afficher la distance jusqu’aux bornes et trier la liste par distance ; partir de votre position pour un itinéraire ; classer les suggestions d’adresses.</li>
+  <li><b>Ce qui quitte l’appareil :</b> votre position précise est envoyée au serveur OSRM comme départ de l’itinéraire et, si Open Charge Map est votre source de données, à Open Charge Map dans la ligne de l’itinéraire, uniquement lorsque vous calculez un itinéraire depuis ou vers « Ma position ». Lorsque la carte est centrée sur vous, la zone demandée aux services de bornes et au serveur de tuiles entoure votre position. Photon ne reçoit qu’une position arrondie à environ 10 km.</li>
+  <li><b>Conservation :</b> l’app n’enregistre pas votre position. Elle enregistre seulement la dernière position de la carte (centre et zoom) sur l’appareil pour rouvrir la carte au même endroit ; si la carte était centrée sur vous, cette position est proche de la vôtre.</li>
+  <li><b>Retrait :</b> Paramètres Android → Applications → Amperoute → Autorisations → Position.</li>
+</ul>
+
+<h3>5. Données enregistrées sur votre appareil</h3>
+<ul>
+  <li><b>Fichier de réglages :</b> profil du véhicule (nom, batterie, consommation, puissance de recharge, prises, limites de charge), tarifs, prix du carburant et devise, filtres de bornes, source de données, thème, votre clé API Open Charge Map (si saisie), favoris (copie des données des bornes), vos prix et notes, et la dernière position de la carte.</li>
+  <li><b>Cache :</b> bornes chargées récemment (séparément pour chaque source de données) et tuiles de carte, pour que l’app soit plus rapide et fonctionne quand les serveurs sont injoignables.</li>
+  <li><b>Langue de l’app</b> (Android 13 et plus récent) : enregistrée par le système Android.</li>
+  <li>Les itinéraires, résultats de recherche et votre position actuelle ne sont conservés qu’en mémoire pendant l’exécution de l’app.</li>
+  <li><b>Sauvegarde :</b> si la sauvegarde Android est activée sur votre appareil, Android inclut le fichier de réglages (pas le cache) dans la sauvegarde sur votre compte Google et dans le transfert vers un nouvel appareil. Les sauvegardes sont gérées par Google ; à partir d’Android 9 avec un verrouillage d’écran, elles sont chiffrées de bout en bout. Nous n’y avons pas accès.</li>
+</ul>
+
+<h3 id="fr-delete">6. Supprimer vos données</h3>
+<ul>
+  <li>Favoris : touchez à nouveau l’étoile. Votre prix : ouvrez-le dans la fiche de la borne et touchez « Supprimer ». Réglages : modifiez-les dans « Ma voiture ».</li>
+  <li>Toutes les données de l’app : Paramètres Android → Applications → Amperoute → Stockage → Effacer le stockage (ou Vider le cache pour le cache seul), ou désinstallez l’app.</li>
+  <li>Sauvegardes : Paramètres Android → Google → Sauvegarde (géré par Google).</li>
+  <li>Les données présentes dans les journaux des services tiers relèvent de leurs règles ; vous pouvez les contacter directement (section 7). Nous ne détenons pas de telles données.</li>
+</ul>
+
+<h3>7. Services tiers</h3>
+<p>Ces services agissent en tant que responsables de traitement indépendants. Amperoute n’a pas de contrat avec eux et ne peut pas contrôler la façon dont ils traitent les requêtes.</p>
+<div class="svc"><b>OpenFreeMap — tuiles de carte (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Hongrie ; diffusion via le réseau Cloudflare. Reçoit : requêtes de tuiles de la zone visible, adresse IP.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">politique de Cloudflare</a></div>
+<div class="svc"><b>API Overpass — bornes OpenStreetMap (overpass-api.de)</b><span>FOSSGIS e.V., Allemagne. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">politique de FOSSGIS</a></div>
+<div class="svc"><b>Miroir Overpass (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, association à but non lucratif, Autriche. Utilisé si overpass-api.de ne répond pas. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
+<!-- maps.mail.ru : supprimer ce bloc (et le point de la section 8) si le miroir est retiré d’OverpassSource.ENDPOINTS -->
+<div class="svc"><b>Miroir Overpass (maps.mail.ru)</b><span>VK LLC, Russie. Utilisé uniquement en dernier recours si les autres serveurs Overpass ne répondent pas. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">politique de confidentialité de Mail</a></div>
+<div class="svc"><b>Open Charge Map — bornes (api.openchargemap.io)</b><span>Projet Open Charge Map ; diffusion via le réseau Cloudflare. Reçoit : zone de carte ou ligne de l’itinéraire, clé API, adresse IP.</span><a href="https://www.openchargemap.org/about/terms">conditions et confidentialité d’Open Charge Map</a></div>
+<div class="svc"><b>Photon — recherche d’adresses (photon.komoot.io)</b><span>komoot. Reçoit : texte recherché, langue, position arrondie à environ 10 km (si autorisée), adresse IP.</span><a href="https://www.komoot.com/privacy">politique de komoot</a></div>
+<div class="svc"><b>OSRM — itinéraires (router.project-osrm.org)</b><span>FOSSGIS e.V., Allemagne. Reçoit : coordonnées du départ et de l’arrivée, adresse IP. Selon FOSSGIS, les requêtes d’itinéraire sont enregistrées dans le journal du serveur.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">politique de FOSSGIS</a></div>
+<div class="svc"><b>Google Maps, Waze</b><span>Google. Uniquement si vous choisissez d’ouvrir une borne ou un itinéraire dans ces apps.</span><a href="https://policies.google.com/privacy">règles de confidentialité de Google</a> · <a href="https://www.waze.com/legal/privacy">politique de Waze</a></div>
+<div class="svc"><b>Google Play et Android</b><span>Google traite des données pour l’installation et les mises à jour de l’app et pour la sauvegarde Android. Si vous avez autorisé votre appareil à partager des données d’utilisation et de diagnostic avec Google, Google peut nous fournir des statistiques agrégées de plantages et de performances (Android vitals) ; ce réglage se fait dans Android, pas dans l’app.</span><a href="https://policies.google.com/privacy">règles de confidentialité de Google</a></div>
+<p>La durée de conservation par ces services dépend de leurs règles ; par exemple, Private.coffee conserve les adresses IP dans les journaux du serveur jusqu’à 48 heures, OpenFreeMap supprime les journaux d’erreurs au bout de 7 jours.</p>
+
+<h3>8. Transferts hors de l’UE/EEE</h3>
+<ul>
+  <li>Le trafic d’OpenFreeMap et d’Open Charge Map est diffusé par Cloudflare, Inc. (États-Unis). Cloudflare participe au EU-U.S. Data Privacy Framework.</li>
+  <li class="note">maps.mail.ru est exploité par VK LLC en Russie. Il n’existe pas de décision d’adéquation de l’UE pour la Russie ; le niveau de protection des données qui y sont envoyées (zone de carte ou couloir de l’itinéraire et adresse IP) peut donc être plus faible, et les autorités russes peuvent y avoir accès. L’app n’utilise ce serveur qu’en dernier recours, si les autres serveurs Overpass ne répondent pas, et uniquement avec la source de données OpenStreetMap. Pour l’éviter, choisissez Open Charge Map comme source de données dans « Ma voiture ».</li>
+  <li>Google peut traiter des données dans le monde entier conformément à ses règles de confidentialité.</li>
+</ul>
+
+<h3>9. Bases légales (RGPD)</h3>
+<ul>
+  <li><b>Localisation :</b> votre consentement (art. 6, par. 1, a), donné via l’autorisation Android. Vous pouvez le retirer à tout moment, sans remettre en cause le traitement effectué auparavant.</li>
+  <li><b>Requêtes aux services de carte, de bornes, d’adresses et d’itinéraires</b> (adresse IP, zone, texte recherché, points de l’itinéraire) : nécessaires pour fournir les fonctions que vous utilisez (art. 6, par. 1, b) ; pour le chargement automatique de la carte et des bornes, également notre intérêt légitime à proposer une app qui fonctionne (art. 6, par. 1, f).</li>
+  <li><b>Enregistrement des réglages sur l’appareil :</b> nécessaire aux fonctions que vous utilisez (art. 6, par. 1, b) ; l’enregistrement de ces informations sur l’appareil est strictement nécessaire au service que vous avez demandé (art. 5, par. 3 de la directive ePrivacy, art. 82 de la loi Informatique et Libertés).</li>
+  <li><b>Transmission à d’autres apps</b> (navigation, partage) : votre instruction lorsque vous touchez le bouton.</li>
+</ul>
+
+<h3>10. Vos droits</h3>
+<p>En vertu du RGPD, vous disposez d’un droit d’accès (art. 15), de rectification (art. 16), d’effacement (art. 17), de limitation du traitement (art. 18), à la portabilité (art. 20) et d’opposition (art. 21), du droit de retirer votre consentement (art. 7, par. 3) et d’introduire une réclamation auprès d’une autorité de contrôle, notamment dans le pays de l’UE où vous résidez (art. 77), en France la CNIL. Comme nous ne conservons pas de données vous concernant, nous ne pouvons généralement trouver aucune donnée relative à vous ; vous pouvez toutefois nous écrire à tout moment à [CONTACT EMAIL], nous répondrons dans un délai d’un mois. Pour les données détenues par les services tiers, contactez-les directement.</p>
+
+<h3>11. Sécurité</h3>
+<p>Toutes les connexions de l’app sont chiffrées en HTTPS. Les données sur l’appareil sont protégées par le bac à sable des applications Android. Le développeur n’exploite aucun serveur sur lequel vos données pourraient être stockées.</p>
+
+<h3>12. Enfants</h3>
+<p>Amperoute est destinée aux conducteurs adultes et ne s’adresse pas aux enfants. Nous ne traitons pas sciemment de données d’enfants.</p>
+
+<h3>13. Modifications</h3>
+<p>Nous publierons les modifications sur cette page et mettrons à jour la date d’effet. Nous signalerons les changements importants dans les notes de version de la mise à jour de l’app.</p>
+
+<h3>14. Contact</h3>
+<p>[DEVELOPER NAME] · [CONTACT EMAIL]</p>
+<p class="top"><a href="#top">↑</a></p>
+</section>
+
+</div>
+</body>
+</html>
