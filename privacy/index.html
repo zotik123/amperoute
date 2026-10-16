@@ -97,6 +97,7 @@
   <li>We, the developer, do not run any servers and do not receive data about you. Your car profile, favorites, your prices and settings are stored only on your device.</li>
   <li>To show the map, charging stations, address suggestions and routes, the app connects directly to the third-party services listed in section 7. These requests contain the map area, route points or the search text and, like any internet request, your IP address.</li>
   <li>Location access is optional. The app uses your location only while it is open, never in the background.</li>
+  <li>This policy is also available in the app: “My car” → “About the data” → “Privacy policy”.</li>
 </ul>
 
 <h3>2. Who is responsible</h3>
@@ -108,8 +109,8 @@
 <h4>3.2 Charging stations</h4>
 <p>When you stop moving the map at a sufficient zoom level and this area has not been loaded yet, and when you build a route, the app requests stations from the data source selected in “My car”:</p>
 <ul>
-  <li><b>OpenStreetMap:</b> a query to the Overpass API with the rectangle of the visible area (with a margin) or with rectangles along the route corridor. The app first uses overpass-api.de; if it does not respond, it tries the mirrors overpass.private.coffee and overpass.kumi.systems, and as a last resort maps.mail.ru.</li>
-  <li><b>Open Charge Map:</b> the visible area, or the route line (simplified, including its start and end points) with the search distance. Every request contains an API key: by default the app’s own key; if you entered your own key in the settings, your key is sent, which allows Open Charge Map to link these requests to your Open Charge Map account.</li>
+  <li><b>OpenStreetMap:</b> a query to the Overpass API for the cells of a fixed grid (about 14 × 17 km each) that cover the visible area, or for rectangles along the route corridor. The app uses overpass-api.de and, if it does not respond, the mirror overpass.private.coffee.</li>
+  <li><b>Open Charge Map:</b> the same grid cells, or the route line (simplified, including its start and end points) with the search distance. Every request contains an API key: by default the app’s own key; if you entered your own key in the settings, your key is sent, which allows Open Charge Map to link these requests to your Open Charge Map account.</li>
 </ul>
 <h4>3.3 Address search</h4>
 <p>When you type at least three characters into the “From” or “To” field, the app sends the typed text, the interface language and, if you have allowed location access, your last known position rounded to 0.1° (about 10 km) to Photon, so that nearby places are suggested first.</p>
@@ -130,9 +131,9 @@
 
 <h3 id="en-location">4. Location</h3>
 <ul>
-  <li><b>Permission:</b> the app asks for approximate or precise location when you open the map. You can refuse: you can still browse the map and enter addresses manually.</li>
+  <li><b>Permission:</b> when you first open the map, the app explains in a short dialog what your location is used for and where it is sent. The Android permission request (approximate or precise location) appears only if you tap “Continue”; with “Not now” nothing is requested. The app offers this by itself only once; later you can allow location with the “My location” button on the map, again after the same explanation. You can refuse: you can still browse the map and enter addresses manually.</li>
   <li><b>Purposes, only while the app is open:</b> showing your position on the map; moving the map to you on first start; showing the distance to stations and sorting the list by distance; starting a route from your location; ranking address suggestions.</li>
-  <li><b>What leaves the device:</b> your precise location is sent to the OSRM routing server as the start of a route, and to Open Charge Map as part of the route line if that is your data source, only when you build a route from or to “My location”. When the map is centred on you, the area requested from the station services and the map tile server surrounds your position. Photon receives only a position rounded to about 10 km.</li>
+  <li><b>What leaves the device:</b> your precise location is sent to the OSRM routing server as the start of a route, and to Open Charge Map as part of the route line if that is your data source, only when you build a route from or to “My location”. When the map is centred on you, the map tile server receives tiles around your position, and the station services receive the grid cells around it (about 14 × 17 km each, not your exact point). Photon receives only a position rounded to about 10 km.</li>
   <li><b>Storage:</b> the app does not store your location. It only saves the last map position (map centre and zoom) on the device so that the map reopens there; if the map was centred on you, this position is close to your location.</li>
   <li><b>Withdrawal:</b> Android Settings → Apps → Amperoute → Permissions → Location.</li>
 </ul>
@@ -158,9 +159,7 @@
 <p>These services act as independent controllers. Amperoute has no contracts with them and cannot control how they process requests.</p>
 <div class="svc"><b>OpenFreeMap — map tiles (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Hungary; delivered through the Cloudflare network. Receives: tile requests for the visible area, IP address.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a></div>
 <div class="svc"><b>Overpass API — OpenStreetMap stations (overpass-api.de)</b><span>FOSSGIS e.V., Germany. Receives: map area or route corridor, IP address.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">FOSSGIS privacy policy</a></div>
-<div class="svc"><b>Overpass mirror (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, non-profit association, Austria. Used if overpass-api.de does not respond. Receives: map area or route corridor, IP address.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
-<!-- maps.mail.ru: remove this block in all four languages (and the note in section 8) if the mirror is removed from OverpassSource.ENDPOINTS -->
-<div class="svc"><b>Overpass mirror (maps.mail.ru)</b><span>VK LLC, Russia. Used only as a last resort if the other Overpass servers do not respond. Receives: map area or route corridor, IP address.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">Mail privacy policy</a></div>
+<div class="svc"><b>Overpass mirror (overpass.private.coffee)</b><span>Private.coffee, non-profit association, Austria. Used if overpass-api.de does not respond. Receives: map area or route corridor, IP address.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
 <div class="svc"><b>Open Charge Map — stations (api.openchargemap.io)</b><span>Open Charge Map project; delivered through the Cloudflare network. Receives: map area or route line, API key, IP address.</span><a href="https://www.openchargemap.org/about/terms">Open Charge Map terms and privacy</a></div>
 <div class="svc"><b>Photon — address search (photon.komoot.io)</b><span>komoot. Receives: search text, language, position rounded to about 10 km (if allowed), IP address.</span><a href="https://www.komoot.com/privacy">komoot privacy policy</a></div>
 <div class="svc"><b>OSRM — routing (router.project-osrm.org)</b><span>FOSSGIS e.V., Germany. Receives: start and destination coordinates, IP address. According to FOSSGIS, route requests are saved in the server log.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">FOSSGIS privacy policy</a></div>
@@ -171,7 +170,6 @@
 <h3>8. Transfers outside the EU/EEA</h3>
 <ul>
   <li>Cloudflare, Inc. (USA) delivers the traffic of OpenFreeMap and Open Charge Map. Cloudflare participates in the EU-U.S. Data Privacy Framework.</li>
-  <li class="note">maps.mail.ru is operated by VK LLC in Russia. There is no EU adequacy decision for Russia, so the protection level of the data there (map area or route corridor and IP address) may be lower, and Russian authorities may have access to it. The app uses this server only as a last resort if the other Overpass servers do not respond, and only with the OpenStreetMap data source. If you want to avoid it, choose Open Charge Map as the data source in “My car”.</li>
   <li>Google may process data worldwide according to its privacy policy.</li>
 </ul>
 
@@ -211,6 +209,7 @@
   <li>У нас, разработчика, нет своих серверов, и данные о вас к нам не поступают. Профиль авто, избранное, ваши цены и настройки хранятся только на вашем устройстве.</li>
   <li>Чтобы показать карту, зарядные станции, подсказки адресов и маршруты, приложение напрямую обращается к сторонним сервисам из раздела 7. В запросах передаются область карты, точки маршрута или текст поиска и, как при любом запросе в интернет, ваш IP-адрес.</li>
   <li>Доступ к геолокации необязателен. Приложение использует местоположение только пока открыто и никогда — в фоне.</li>
+  <li>Эта политика доступна и в приложении: «Моё авто» → «О данных» → «Политика конфиденциальности».</li>
 </ul>
 
 <h3>2. Кто отвечает за обработку</h3>
@@ -222,8 +221,8 @@
 <h4>3.2 Зарядные станции</h4>
 <p>Когда вы останавливаете карту на достаточном масштабе и эта область ещё не загружена, а также при построении маршрута приложение запрашивает станции у источника данных, выбранного в разделе «Моё авто»:</p>
 <ul>
-  <li><b>OpenStreetMap:</b> запрос к Overpass API с прямоугольником видимой области (с запасом по краям) или с прямоугольниками вдоль коридора маршрута. Сначала используется overpass-api.de; если он не отвечает — зеркала overpass.private.coffee и overpass.kumi.systems, в крайнем случае — maps.mail.ru.</li>
-  <li><b>Open Charge Map:</b> видимая область или линия маршрута (упрощённая, вместе с начальной и конечной точками) и расстояние поиска. В каждом запросе передаётся API-ключ: по умолчанию ключ приложения; если вы указали свой ключ в настройках, отправляется он, и Open Charge Map может связать эти запросы с вашим аккаунтом Open Charge Map.</li>
+  <li><b>OpenStreetMap:</b> запрос к Overpass API по ячейкам фиксированной сетки (каждая примерно 14 × 17 км), которые покрывают видимую область, или по прямоугольникам вдоль коридора маршрута. Используется overpass-api.de, а если он не отвечает — зеркало overpass.private.coffee.</li>
+  <li><b>Open Charge Map:</b> те же ячейки сетки или линия маршрута (упрощённая, вместе с начальной и конечной точками) и расстояние поиска. В каждом запросе передаётся API-ключ: по умолчанию ключ приложения; если вы указали свой ключ в настройках, отправляется он, и Open Charge Map может связать эти запросы с вашим аккаунтом Open Charge Map.</li>
 </ul>
 <h4>3.3 Поиск адресов</h4>
 <p>Когда вы вводите не меньше трёх символов в поле «Откуда» или «Куда», приложение отправляет в Photon введённый текст, язык интерфейса и, если вы разрешили геолокацию, последнее известное местоположение, округлённое до 0,1° (около 10 км), чтобы сначала предлагать места поблизости.</p>
@@ -244,9 +243,9 @@
 
 <h3 id="ru-location">4. Геолокация</h3>
 <ul>
-  <li><b>Разрешение:</b> приложение запрашивает приблизительное или точное местоположение, когда вы открываете карту. Можно отказаться: карта по-прежнему работает, адреса вводятся вручную.</li>
+  <li><b>Разрешение:</b> при первом открытии карты приложение коротко объясняет в диалоге, зачем нужно местоположение и куда оно передаётся. Системный запрос Android (приблизительное или точное местоположение) появляется, только если вы нажмёте «Продолжить»; при «Не сейчас» ничего не запрашивается. Само приложение предлагает это один раз; позже геолокацию можно разрешить кнопкой «Моё местоположение» на карте — тоже после того же объяснения. Можно отказаться: карта по-прежнему работает, адреса вводятся вручную.</li>
   <li><b>Зачем, и только пока приложение открыто:</b> показать вас на карте; при первом запуске перенести карту к вам; показать расстояние до станций и отсортировать список по расстоянию; построить маршрут из вашего местоположения; ранжировать подсказки адресов.</li>
-  <li><b>Что уходит с устройства:</b> точное местоположение передаётся серверу маршрутизации OSRM как начало маршрута и, если источник данных — Open Charge Map, в Open Charge Map как часть линии маршрута — только когда вы строите маршрут из «Моего местоположения» или в него. Когда карта центрирована на вас, область, которую приложение запрашивает у сервисов станций и сервера тайлов, окружает ваше местоположение. Photon получает только координаты, округлённые примерно до 10 км.</li>
+  <li><b>Что уходит с устройства:</b> точное местоположение передаётся серверу маршрутизации OSRM как начало маршрута и, если источник данных — Open Charge Map, в Open Charge Map как часть линии маршрута — только когда вы строите маршрут из «Моего местоположения» или в него. Когда карта центрирована на вас, сервер тайлов получает тайлы вокруг вашего местоположения, а сервисы станций — ячейки сетки вокруг него (примерно 14 × 17 км каждая, а не вашу точку). Photon получает только координаты, округлённые примерно до 10 км.</li>
   <li><b>Хранение:</b> приложение не хранит ваше местоположение. На устройстве сохраняется только последняя позиция карты (центр и масштаб), чтобы карта открылась там же; если карта была центрирована на вас, эта позиция близка к вашему местоположению.</li>
   <li><b>Отзыв разрешения:</b> Настройки Android → Приложения → Amperoute → Разрешения → Местоположение.</li>
 </ul>
@@ -272,9 +271,7 @@
 <p>Эти сервисы действуют как самостоятельные ответственные за обработку. У Amperoute нет с ними договоров, и мы не можем влиять на то, как они обрабатывают запросы.</p>
 <div class="svc"><b>OpenFreeMap — тайлы карты (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Венгрия; доставка через сеть Cloudflare. Получает: запросы тайлов видимой области, IP-адрес.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">политика Cloudflare</a></div>
 <div class="svc"><b>Overpass API — станции OpenStreetMap (overpass-api.de)</b><span>FOSSGIS e.V., Германия. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">политика FOSSGIS</a></div>
-<div class="svc"><b>Зеркало Overpass (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, некоммерческое объединение, Австрия. Используется, если overpass-api.de не отвечает. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
-<!-- maps.mail.ru: удалить этот блок (и пункт в разделе 8), если зеркало убрано из OverpassSource.ENDPOINTS -->
-<div class="svc"><b>Зеркало Overpass (maps.mail.ru)</b><span>ООО «ВК», Россия. Используется только в крайнем случае, если остальные серверы Overpass не отвечают. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">политика конфиденциальности Mail</a></div>
+<div class="svc"><b>Зеркало Overpass (overpass.private.coffee)</b><span>Private.coffee, некоммерческое объединение, Австрия. Используется, если overpass-api.de не отвечает. Получает: область карты или коридор маршрута, IP-адрес.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
 <div class="svc"><b>Open Charge Map — станции (api.openchargemap.io)</b><span>Проект Open Charge Map; доставка через сеть Cloudflare. Получает: область карты или линию маршрута, API-ключ, IP-адрес.</span><a href="https://www.openchargemap.org/about/terms">условия и политика Open Charge Map</a></div>
 <div class="svc"><b>Photon — поиск адресов (photon.komoot.io)</b><span>komoot. Получает: текст поиска, язык, координаты, округлённые примерно до 10 км (если разрешено), IP-адрес.</span><a href="https://www.komoot.com/privacy">политика komoot</a></div>
 <div class="svc"><b>OSRM — маршруты (router.project-osrm.org)</b><span>FOSSGIS e.V., Германия. Получает: координаты начала и конца маршрута, IP-адрес. По данным FOSSGIS, запросы маршрутов сохраняются в журнале сервера.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">политика FOSSGIS</a></div>
@@ -285,7 +282,6 @@
 <h3>8. Передача данных за пределы ЕС/ЕЭЗ</h3>
 <ul>
   <li>Трафик OpenFreeMap и Open Charge Map доставляет Cloudflare, Inc. (США). Cloudflare участвует в EU-U.S. Data Privacy Framework.</li>
-  <li class="note">maps.mail.ru обслуживает ООО «ВК» в России. Для России нет решения ЕС об адекватности защиты, поэтому уровень защиты данных там (область карты или коридор маршрута и IP-адрес) может быть ниже и к ним могут получить доступ российские органы власти. Приложение обращается к этому серверу только в крайнем случае, если остальные серверы Overpass не отвечают, и только с источником данных OpenStreetMap. Чтобы исключить его, выберите в разделе «Моё авто» источник Open Charge Map.</li>
   <li>Google может обрабатывать данные по всему миру согласно своей политике конфиденциальности.</li>
 </ul>
 
@@ -325,6 +321,7 @@
   <li>Wir als Entwickler betreiben keine Server und erhalten keine Daten über Sie. Fahrzeugprofil, Favoriten, Ihre Preise und Einstellungen werden nur auf Ihrem Gerät gespeichert.</li>
   <li>Um Karte, Ladestationen, Adressvorschläge und Routen anzuzeigen, verbindet sich die App direkt mit den Drittdiensten aus Abschnitt 7. Diese Anfragen enthalten den Kartenausschnitt, Routenpunkte oder den Suchtext und, wie jede Internetanfrage, Ihre IP-Adresse.</li>
   <li>Der Standortzugriff ist freiwillig. Die App nutzt Ihren Standort nur, solange sie geöffnet ist, nie im Hintergrund.</li>
+  <li>Diese Datenschutzerklärung finden Sie auch in der App: „Mein Auto“ → „Über die Daten“ → „Datenschutzerklärung“.</li>
 </ul>
 
 <h3>2. Verantwortlicher</h3>
@@ -336,8 +333,8 @@
 <h4>3.2 Ladestationen</h4>
 <p>Wenn Sie die Karte bei ausreichender Vergrößerung anhalten und dieser Bereich noch nicht geladen ist sowie bei der Routenberechnung fragt die App Stationen bei der Datenquelle ab, die unter „Mein Auto“ gewählt ist:</p>
 <ul>
-  <li><b>OpenStreetMap:</b> eine Anfrage an die Overpass API mit dem Rechteck des sichtbaren Bereichs (mit Rand) oder mit Rechtecken entlang des Routenkorridors. Zuerst wird overpass-api.de genutzt; antwortet der Server nicht, die Spiegel overpass.private.coffee und overpass.kumi.systems, als letzte Möglichkeit maps.mail.ru.</li>
-  <li><b>Open Charge Map:</b> der sichtbare Bereich oder die Routenlinie (vereinfacht, einschließlich Start- und Endpunkt) mit dem Suchabstand. Jede Anfrage enthält einen API-Schlüssel: standardmäßig den Schlüssel der App; haben Sie in den Einstellungen einen eigenen Schlüssel eingegeben, wird dieser gesendet, und Open Charge Map kann die Anfragen Ihrem Open-Charge-Map-Konto zuordnen.</li>
+  <li><b>OpenStreetMap:</b> eine Anfrage an die Overpass API für die Zellen eines festen Rasters (je etwa 14 × 17 km), die den sichtbaren Bereich abdecken, oder für Rechtecke entlang des Routenkorridors. Die App nutzt overpass-api.de und, wenn dieser Server nicht antwortet, den Spiegel overpass.private.coffee.</li>
+  <li><b>Open Charge Map:</b> dieselben Rasterzellen oder die Routenlinie (vereinfacht, einschließlich Start- und Endpunkt) mit dem Suchabstand. Jede Anfrage enthält einen API-Schlüssel: standardmäßig den Schlüssel der App; haben Sie in den Einstellungen einen eigenen Schlüssel eingegeben, wird dieser gesendet, und Open Charge Map kann die Anfragen Ihrem Open-Charge-Map-Konto zuordnen.</li>
 </ul>
 <h4>3.3 Adresssuche</h4>
 <p>Wenn Sie mindestens drei Zeichen in das Feld „Von“ oder „Nach“ eingeben, sendet die App den eingegebenen Text, die Sprache der Oberfläche und, falls Sie den Standortzugriff erlaubt haben, Ihren zuletzt bekannten Standort, gerundet auf 0,1° (etwa 10 km), an Photon, damit Orte in der Nähe zuerst vorgeschlagen werden.</p>
@@ -358,9 +355,9 @@
 
 <h3 id="de-location">4. Standort</h3>
 <ul>
-  <li><b>Berechtigung:</b> Die App fragt beim Öffnen der Karte nach dem ungefähren oder genauen Standort. Sie können ablehnen: Die Karte funktioniert weiter, Adressen geben Sie dann von Hand ein.</li>
+  <li><b>Berechtigung:</b> Beim ersten Öffnen der Karte erklärt die App in einem kurzen Dialog, wofür der Standort verwendet und wohin er gesendet wird. Die Android-Berechtigungsanfrage (ungefährer oder genauer Standort) erscheint nur, wenn Sie auf „Weiter“ tippen; bei „Nicht jetzt“ wird nichts angefragt. Von sich aus bietet die App das nur einmal an; später können Sie den Standort über die Schaltfläche „Mein Standort“ auf der Karte erlauben, ebenfalls nach derselben Erklärung. Sie können ablehnen: Die Karte funktioniert weiter, Adressen geben Sie dann von Hand ein.</li>
   <li><b>Zwecke, nur während die App geöffnet ist:</b> Ihre Position auf der Karte anzeigen; beim ersten Start die Karte zu Ihnen bewegen; die Entfernung zu Stationen anzeigen und die Liste danach sortieren; eine Route ab Ihrem Standort starten; Adressvorschläge sortieren.</li>
-  <li><b>Was das Gerät verlässt:</b> Ihr genauer Standort geht nur dann an den Routing-Server OSRM als Start der Route und, wenn Open Charge Map Ihre Datenquelle ist, als Teil der Routenlinie an Open Charge Map, wenn Sie eine Route ab oder zu „Mein Standort“ berechnen. Ist die Karte auf Sie zentriert, umgibt der Bereich, den die App bei den Stationsdiensten und beim Kachelserver anfragt, Ihre Position. Photon erhält nur eine auf etwa 10 km gerundete Position.</li>
+  <li><b>Was das Gerät verlässt:</b> Ihr genauer Standort geht nur dann an den Routing-Server OSRM als Start der Route und, wenn Open Charge Map Ihre Datenquelle ist, als Teil der Routenlinie an Open Charge Map, wenn Sie eine Route ab oder zu „Mein Standort“ berechnen. Ist die Karte auf Sie zentriert, erhält der Kachelserver Kacheln rund um Ihre Position und erhalten die Stationsdienste die Rasterzellen darum herum (je etwa 14 × 17 km, nicht Ihren genauen Punkt). Photon erhält nur eine auf etwa 10 km gerundete Position.</li>
   <li><b>Speicherung:</b> Die App speichert Ihren Standort nicht. Gespeichert wird nur die letzte Kartenposition (Mittelpunkt und Zoom), damit die Karte dort wieder öffnet; war die Karte auf Sie zentriert, liegt diese Position nahe an Ihrem Standort.</li>
   <li><b>Widerruf:</b> Android-Einstellungen → Apps → Amperoute → Berechtigungen → Standort.</li>
 </ul>
@@ -386,9 +383,7 @@
 <p>Diese Dienste handeln als eigenständige Verantwortliche. Amperoute hat mit ihnen keine Verträge und kann nicht beeinflussen, wie sie Anfragen verarbeiten.</p>
 <div class="svc"><b>OpenFreeMap — Kartenkacheln (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Ungarn; Auslieferung über das Cloudflare-Netz. Erhält: Kachelanfragen für den sichtbaren Bereich, IP-Adresse.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">Datenschutz Cloudflare</a></div>
 <div class="svc"><b>Overpass API — Stationen aus OpenStreetMap (overpass-api.de)</b><span>FOSSGIS e.V., Deutschland. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">Datenschutzerklärung FOSSGIS</a></div>
-<div class="svc"><b>Overpass-Spiegel (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, gemeinnütziger Verein, Österreich. Wird genutzt, wenn overpass-api.de nicht antwortet. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
-<!-- maps.mail.ru: diesen Block (und den Punkt in Abschnitt 8) entfernen, falls der Spiegel aus OverpassSource.ENDPOINTS entfernt wird -->
-<div class="svc"><b>Overpass-Spiegel (maps.mail.ru)</b><span>VK LLC, Russland. Wird nur als letzte Möglichkeit genutzt, wenn die anderen Overpass-Server nicht antworten. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">Datenschutzerklärung Mail</a></div>
+<div class="svc"><b>Overpass-Spiegel (overpass.private.coffee)</b><span>Private.coffee, gemeinnütziger Verein, Österreich. Wird genutzt, wenn overpass-api.de nicht antwortet. Erhält: Kartenausschnitt oder Routenkorridor, IP-Adresse.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
 <div class="svc"><b>Open Charge Map — Stationen (api.openchargemap.io)</b><span>Projekt Open Charge Map; Auslieferung über das Cloudflare-Netz. Erhält: Kartenausschnitt oder Routenlinie, API-Schlüssel, IP-Adresse.</span><a href="https://www.openchargemap.org/about/terms">Bedingungen und Datenschutz Open Charge Map</a></div>
 <div class="svc"><b>Photon — Adresssuche (photon.komoot.io)</b><span>komoot. Erhält: Suchtext, Sprache, auf etwa 10 km gerundete Position (falls erlaubt), IP-Adresse.</span><a href="https://www.komoot.com/privacy">Datenschutzerklärung komoot</a></div>
 <div class="svc"><b>OSRM — Routen (router.project-osrm.org)</b><span>FOSSGIS e.V., Deutschland. Erhält: Koordinaten von Start und Ziel, IP-Adresse. Laut FOSSGIS werden Routenanfragen im Serverprotokoll gespeichert.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">Datenschutzerklärung FOSSGIS</a></div>
@@ -399,7 +394,6 @@
 <h3>8. Übermittlung außerhalb der EU/des EWR</h3>
 <ul>
   <li>Den Datenverkehr von OpenFreeMap und Open Charge Map liefert Cloudflare, Inc. (USA) aus. Cloudflare nimmt am EU-U.S. Data Privacy Framework teil.</li>
-  <li class="note">maps.mail.ru wird von VK LLC in Russland betrieben. Für Russland gibt es keinen Angemessenheitsbeschluss der EU; das Schutzniveau für die Daten dort (Kartenausschnitt oder Routenkorridor und IP-Adresse) kann daher niedriger sein, und russische Behörden können darauf zugreifen. Die App nutzt diesen Server nur als letzte Möglichkeit, wenn die anderen Overpass-Server nicht antworten, und nur mit der Datenquelle OpenStreetMap. Wenn Sie ihn vermeiden möchten, wählen Sie unter „Mein Auto“ die Datenquelle Open Charge Map.</li>
   <li>Google kann Daten gemäß seiner Datenschutzerklärung weltweit verarbeiten.</li>
 </ul>
 
@@ -439,6 +433,7 @@
   <li>Nous, le développeur, n’exploitons aucun serveur et ne recevons aucune donnée vous concernant. Le profil du véhicule, les favoris, vos prix et vos réglages sont enregistrés uniquement sur votre appareil.</li>
   <li>Pour afficher la carte, les bornes, les suggestions d’adresses et les itinéraires, l’app se connecte directement aux services tiers listés à la section 7. Ces requêtes contiennent la zone de carte, les points de l’itinéraire ou le texte recherché et, comme toute requête sur Internet, votre adresse IP.</li>
   <li>L’accès à la position est facultatif. L’app n’utilise votre position que lorsqu’elle est ouverte, jamais en arrière-plan.</li>
+  <li>Cette politique est aussi accessible dans l’app : « Ma voiture » → « À propos des données » → « Politique de confidentialité ».</li>
 </ul>
 
 <h3>2. Responsable du traitement</h3>
@@ -450,8 +445,8 @@
 <h4>3.2 Bornes de recharge</h4>
 <p>Lorsque vous arrêtez de déplacer la carte à un niveau de zoom suffisant et que cette zone n’est pas encore chargée, ainsi que lors du calcul d’un itinéraire, l’app demande les bornes à la source de données choisie dans « Ma voiture » :</p>
 <ul>
-  <li><b>OpenStreetMap :</b> une requête à l’API Overpass avec le rectangle de la zone visible (avec une marge) ou des rectangles le long du couloir de l’itinéraire. L’app utilise d’abord overpass-api.de ; s’il ne répond pas, les miroirs overpass.private.coffee et overpass.kumi.systems, et en dernier recours maps.mail.ru.</li>
-  <li><b>Open Charge Map :</b> la zone visible, ou la ligne de l’itinéraire (simplifiée, avec ses points de départ et d’arrivée) et la distance de recherche. Chaque requête contient une clé API : par défaut celle de l’app ; si vous avez saisi votre propre clé dans les réglages, c’est elle qui est envoyée, ce qui permet à Open Charge Map de relier ces requêtes à votre compte Open Charge Map.</li>
+  <li><b>OpenStreetMap :</b> une requête à l’API Overpass pour les cellules d’une grille fixe (d’environ 14 × 17 km chacune) qui couvrent la zone visible, ou pour des rectangles le long du couloir de l’itinéraire. L’app utilise overpass-api.de et, s’il ne répond pas, le miroir overpass.private.coffee.</li>
+  <li><b>Open Charge Map :</b> les mêmes cellules de la grille, ou la ligne de l’itinéraire (simplifiée, avec ses points de départ et d’arrivée) et la distance de recherche. Chaque requête contient une clé API : par défaut celle de l’app ; si vous avez saisi votre propre clé dans les réglages, c’est elle qui est envoyée, ce qui permet à Open Charge Map de relier ces requêtes à votre compte Open Charge Map.</li>
 </ul>
 <h4>3.3 Recherche d’adresses</h4>
 <p>Lorsque vous saisissez au moins trois caractères dans le champ « Départ » ou « Arrivée », l’app envoie à Photon le texte saisi, la langue de l’interface et, si vous avez autorisé la localisation, votre dernière position connue arrondie à 0,1° (environ 10 km), afin de proposer d’abord les lieux proches.</p>
@@ -472,9 +467,9 @@
 
 <h3 id="fr-location">4. Localisation</h3>
 <ul>
-  <li><b>Autorisation :</b> l’app demande la position approximative ou précise à l’ouverture de la carte. Vous pouvez refuser : la carte reste utilisable et vous saisissez les adresses manuellement.</li>
+  <li><b>Autorisation :</b> à la première ouverture de la carte, l’app explique dans une courte fenêtre à quoi sert votre position et où elle est envoyée. La demande d’autorisation Android (position approximative ou précise) n’apparaît que si vous touchez « Continuer » ; avec « Pas maintenant », rien n’est demandé. L’app ne le propose d’elle-même qu’une fois ; ensuite, vous pouvez autoriser la position avec le bouton « Ma position » sur la carte, toujours après la même explication. Vous pouvez refuser : la carte reste utilisable et vous saisissez les adresses manuellement.</li>
   <li><b>Finalités, uniquement lorsque l’app est ouverte :</b> afficher votre position sur la carte ; au premier lancement, centrer la carte sur vous ; afficher la distance jusqu’aux bornes et trier la liste par distance ; partir de votre position pour un itinéraire ; classer les suggestions d’adresses.</li>
-  <li><b>Ce qui quitte l’appareil :</b> votre position précise est envoyée au serveur OSRM comme départ de l’itinéraire et, si Open Charge Map est votre source de données, à Open Charge Map dans la ligne de l’itinéraire, uniquement lorsque vous calculez un itinéraire depuis ou vers « Ma position ». Lorsque la carte est centrée sur vous, la zone demandée aux services de bornes et au serveur de tuiles entoure votre position. Photon ne reçoit qu’une position arrondie à environ 10 km.</li>
+  <li><b>Ce qui quitte l’appareil :</b> votre position précise est envoyée au serveur OSRM comme départ de l’itinéraire et, si Open Charge Map est votre source de données, à Open Charge Map dans la ligne de l’itinéraire, uniquement lorsque vous calculez un itinéraire depuis ou vers « Ma position ». Lorsque la carte est centrée sur vous, le serveur de tuiles reçoit les tuiles autour de votre position et les services de bornes reçoivent les cellules de la grille qui l’entourent (d’environ 14 × 17 km chacune, pas votre point exact). Photon ne reçoit qu’une position arrondie à environ 10 km.</li>
   <li><b>Conservation :</b> l’app n’enregistre pas votre position. Elle enregistre seulement la dernière position de la carte (centre et zoom) sur l’appareil pour rouvrir la carte au même endroit ; si la carte était centrée sur vous, cette position est proche de la vôtre.</li>
   <li><b>Retrait :</b> Paramètres Android → Applications → Amperoute → Autorisations → Position.</li>
 </ul>
@@ -500,9 +495,7 @@
 <p>Ces services agissent en tant que responsables de traitement indépendants. Amperoute n’a pas de contrat avec eux et ne peut pas contrôler la façon dont ils traitent les requêtes.</p>
 <div class="svc"><b>OpenFreeMap — tuiles de carte (tiles.openfreemap.org)</b><span>Hyperknot Software Kft., Hongrie ; diffusion via le réseau Cloudflare. Reçoit : requêtes de tuiles de la zone visible, adresse IP.</span><a href="https://openfreemap.org/privacy/">openfreemap.org/privacy</a> · <a href="https://www.cloudflare.com/privacypolicy/">politique de Cloudflare</a></div>
 <div class="svc"><b>API Overpass — bornes OpenStreetMap (overpass-api.de)</b><span>FOSSGIS e.V., Allemagne. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">politique de FOSSGIS</a></div>
-<div class="svc"><b>Miroir Overpass (overpass.private.coffee, overpass.kumi.systems)</b><span>Private.coffee, association à but non lucratif, Autriche. Utilisé si overpass-api.de ne répond pas. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
-<!-- maps.mail.ru : supprimer ce bloc (et le point de la section 8) si le miroir est retiré d’OverpassSource.ENDPOINTS -->
-<div class="svc"><b>Miroir Overpass (maps.mail.ru)</b><span>VK LLC, Russie. Utilisé uniquement en dernier recours si les autres serveurs Overpass ne répondent pas. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://help.mail.ru/legal/terms/common/privacy/">politique de confidentialité de Mail</a></div>
+<div class="svc"><b>Miroir Overpass (overpass.private.coffee)</b><span>Private.coffee, association à but non lucratif, Autriche. Utilisé si overpass-api.de ne répond pas. Reçoit : zone de carte ou couloir de l’itinéraire, adresse IP.</span><a href="https://private.coffee/privacy.html">private.coffee/privacy</a></div>
 <div class="svc"><b>Open Charge Map — bornes (api.openchargemap.io)</b><span>Projet Open Charge Map ; diffusion via le réseau Cloudflare. Reçoit : zone de carte ou ligne de l’itinéraire, clé API, adresse IP.</span><a href="https://www.openchargemap.org/about/terms">conditions et confidentialité d’Open Charge Map</a></div>
 <div class="svc"><b>Photon — recherche d’adresses (photon.komoot.io)</b><span>komoot. Reçoit : texte recherché, langue, position arrondie à environ 10 km (si autorisée), adresse IP.</span><a href="https://www.komoot.com/privacy">politique de komoot</a></div>
 <div class="svc"><b>OSRM — itinéraires (router.project-osrm.org)</b><span>FOSSGIS e.V., Allemagne. Reçoit : coordonnées du départ et de l’arrivée, adresse IP. Selon FOSSGIS, les requêtes d’itinéraire sont enregistrées dans le journal du serveur.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">politique de FOSSGIS</a></div>
@@ -513,7 +506,6 @@
 <h3>8. Transferts hors de l’UE/EEE</h3>
 <ul>
   <li>Le trafic d’OpenFreeMap et d’Open Charge Map est diffusé par Cloudflare, Inc. (États-Unis). Cloudflare participe au EU-U.S. Data Privacy Framework.</li>
-  <li class="note">maps.mail.ru est exploité par VK LLC en Russie. Il n’existe pas de décision d’adéquation de l’UE pour la Russie ; le niveau de protection des données qui y sont envoyées (zone de carte ou couloir de l’itinéraire et adresse IP) peut donc être plus faible, et les autorités russes peuvent y avoir accès. L’app n’utilise ce serveur qu’en dernier recours, si les autres serveurs Overpass ne répondent pas, et uniquement avec la source de données OpenStreetMap. Pour l’éviter, choisissez Open Charge Map comme source de données dans « Ma voiture ».</li>
   <li>Google peut traiter des données dans le monde entier conformément à ses règles de confidentialité.</li>
 </ul>
 
