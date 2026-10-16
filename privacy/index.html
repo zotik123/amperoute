@@ -89,12 +89,12 @@
 <!-- ============================== ENGLISH ============================== -->
 <section class="lang" id="en" lang="en">
 <h2>Privacy Policy</h2>
-<p class="meta">Amperoute for Android (app.amperoute) · Effective date: 16 October 2026</p>
+<p class="meta">Amperoute for Android (app.amperoute) · Effective date: 17 October 2026</p>
 
 <h3>1. Summary</h3>
 <ul>
   <li>Amperoute has no user accounts, shows no ads and contains no analytics, tracking or crash-reporting tools. We do not sell or rent any data.</li>
-  <li>We, the developer, do not run any servers and do not receive data about you. Your car profile, favorites, your prices and settings are stored only on your device.</li>
+  <li>We, the developer, do not run any servers and do not receive data about you, except the order details Google Play gives sellers if you choose to leave a tip (section 3.7). Your car profile, favorites, your prices and settings are stored only on your device.</li>
   <li>To show the map, charging stations, address suggestions and routes, the app connects directly to the third-party services listed in section 7. These requests contain the map area, route points or the search text and, like any internet request, your IP address.</li>
   <li>Location access is optional. The app uses your location only while it is open, never in the background.</li>
   <li>This policy is also available in the app: “My car” → “About the data” → “Privacy policy”.</li>
@@ -111,11 +111,13 @@
 <ul>
   <li><b>OpenStreetMap:</b> a query to the Overpass API for the cells of a fixed grid (about 14 × 17 km each) that cover the visible area, or for rectangles along the route corridor. The app uses overpass-api.de and, if it does not respond, the mirror overpass.private.coffee.</li>
   <li><b>Open Charge Map:</b> the same grid cells, or the route line (simplified, including its start and end points) with the search distance. Every request contains an API key: by default the app’s own key; if you entered your own key in the settings, your key is sent, which allows Open Charge Map to link these requests to your Open Charge Map account.</li>
+  <li><b>Live availability (Germany, the Netherlands, Finland):</b> when the map shows a street-level area, and while a station card is open, the app asks for the current state of the charging points in the visible area (or about 500 m around the station): MobiData BW for Germany, NDW for the Netherlands. Fintraffic provides the whole of Finland in one file without a location query; the app downloads it only when the map is over Finland.</li>
 </ul>
 <h4>3.3 Address search</h4>
 <p>When you type at least three characters into the “From” or “To” field, the app sends the typed text, the interface language and, if you have allowed location access, your last known position rounded to 0.1° (about 10 km) to Photon, so that nearby places are suggested first.</p>
 <h4>3.4 Route</h4>
 <p>When you tap “Build route”, the coordinates of the start and the destination are sent to Mapbox, which calculates the route with live traffic; if Mapbox is unavailable, to the OSRM routing server. The app does not store the result. If “My location” is the start (or the destination after swapping the points), this is your current precise location.</p>
+<p>To estimate consumption along the route, the app also loads terrain elevation for the route corridor from Terrain Tiles (map tiles about 70 × 45 km, stored on the device and reused), and the temperature forecast for the start, the middle and the end of the route from MET Norway (coordinates rounded to 0.1°, about 10 km).</p>
 <h4>3.5 Navigation, sharing and links</h4>
 <p>Only when you tap the corresponding button:</p>
 <ul>
@@ -124,10 +126,15 @@
   <li><b>Other navigation app:</b> the coordinates and name of the station, passed to the app you choose.</li>
   <li><b>Share:</b> the station’s name, address and an OpenStreetMap link, passed to the app you choose.</li>
   <li><b>“Open / fix” and “Get a key”:</b> a web page on openstreetmap.org or openchargemap.org opens in your browser.</li>
+  <li><b>Charging network app:</b> the network’s app opens, or its page on Google Play if it is not installed. No data is passed to it. To decide which of the two to open, the app checks on the device whether the app is installed; this information does not leave the device.</li>
+  <li><b>“Write to the author”:</b> your e-mail app opens with our address; what you send is up to you.</li>
 </ul>
 <p>From that moment the privacy policy of the other app or website applies.</p>
 <h4>3.6 Technical data</h4>
 <p>Every request reveals your IP address and the time of the request. Requests for stations, addresses and routes carry the identifier <code>Amperoute/1.0 (Android)</code>; map requests carry the map library’s identifier, which may include the app’s name and version and the Android version. The app does not send an advertising ID, device identifiers, your name, e-mail address or contacts.</p>
+
+<h4>3.7 Tips (optional)</h4>
+<p>If you choose “Buy me a coffee”, the purchase is handled entirely by Google Play under Google’s terms and privacy policy. We never see your payment details. The app only receives Google Play’s confirmation of the purchase so that it can complete it. As the seller, we receive from Google the order details that Google provides to all sellers (for example the order number, item, price and country). The app contacts Google Play to show the tip prices only when the tip window is about to be shown or you open it.</p>
 
 <h3 id="en-location">4. Location</h3>
 <ul>
@@ -140,8 +147,8 @@
 
 <h3>5. Data stored on your device</h3>
 <ul>
-  <li><b>Settings file:</b> car profile (name, battery, consumption, charging power, connectors, charge limits), tariffs, fuel price and currency, station filters, data source, theme, your Open Charge Map API key (if entered), favorites (a copy of the station data), your prices and notes, and the last map position.</li>
-  <li><b>Cache:</b> recently loaded stations (separately for each data source) and map tiles, so that the app is faster and works when the servers are unavailable.</li>
+  <li><b>Settings file:</b> car profile (name, battery, consumption, charging power, connectors, charge limits), tariffs, fuel price and currency, station filters, data source, theme, your Open Charge Map API key (if entered), favorites (a copy of the station data), your prices and notes, and the last map position; whether the author’s letter was shown; simple usage counters (date of the first start, number of starts and of built routes, when the tip window was last shown), used only to decide when to offer the tip window.</li>
+  <li><b>Cache:</b> recently loaded stations (separately for each data source), map tiles and terrain elevation tiles, so that the app is faster and works when the servers are unavailable.</li>
   <li><b>App language</b> (Android 13 and newer): stored by the Android system.</li>
   <li>Routes, search results and your current location are kept only in memory while the app is running.</li>
   <li><b>Backup:</b> if Android backup is enabled on your device, Android includes the settings file (not the cache) in the backup to your Google account and in the transfer to a new device. Backups are handled by Google; on Android 9 and newer with a screen lock they are end-to-end encrypted. We have no access to them.</li>
@@ -164,14 +171,20 @@
 <div class="svc"><b>Photon — address search (photon.komoot.io)</b><span>komoot. Receives: search text, language, position rounded to about 10 km (if allowed), IP address.</span><a href="https://www.komoot.com/privacy">komoot privacy policy</a></div>
 <div class="svc"><b>Mapbox — routes with live traffic (api.mapbox.com)</b><span>Mapbox, Inc., USA. Receives: start and destination coordinates, the app’s access token, IP address.</span><a href="https://www.mapbox.com/legal/privacy">Mapbox privacy policy</a></div>
 <div class="svc"><b>OSRM — routing (router.project-osrm.org)</b><span>FOSSGIS e.V., Germany. Receives: start and destination coordinates, IP address. According to FOSSGIS, route requests are saved in the server log.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">FOSSGIS privacy policy</a></div>
+<div class="svc"><b>MobiData BW — live availability, Germany (api.mobidata-bw.de)</b><span>Nahverkehrsgesellschaft Baden-Württemberg mbH (NVBW), Germany. Receives: the visible map area or the area around a station, IP address.</span><a href="https://www.mobidata-bw.de/pages/datenschutz">MobiData BW privacy policy</a></div>
+<div class="svc"><b>NDW — live availability, Netherlands (dotnl.ndw.nu)</b><span>Nationaal Dataportaal Wegverkeer, Netherlands. Receives: the visible map area or the area around a station, IP address.</span><a href="https://www.ndw.nu/privacy">NDW privacy statement</a></div>
+<div class="svc"><b>Fintraffic Digitraffic — live availability, Finland (afir.digitraffic.fi)</b><span>Fintraffic Oy, Finland. Receives: a request for the data of the whole country (no location), the header <code>Digitraffic-User: Amperoute/1.0</code>, IP address.</span><a href="https://www.fintraffic.fi/en/fintraffic/privacy-policy">Fintraffic privacy policy</a></div>
+<div class="svc"><b>Terrain Tiles — terrain elevation (s3.amazonaws.com/elevation-tiles-prod)</b><span>Open dataset on the Amazon Web Services Registry of Open Data; served by Amazon Web Services, Inc., USA. Receives: the tiles along the route (each about 70 × 45 km), IP address.</span><a href="https://aws.amazon.com/privacy/">AWS privacy notice</a></div>
+<div class="svc"><b>MET Norway — temperature forecast (api.met.no)</b><span>Norwegian Meteorological Institute, Norway. Receives: coordinates of the start, middle and end of the route rounded to 0.1° (about 10 km), the app’s identifier with a link to this policy, IP address.</span><a href="https://www.met.no/en/About-us/privacy">MET Norway privacy statement</a></div>
 <div class="svc"><b>Google Maps, Waze</b><span>Google. Only when you choose to open a station or route in these apps.</span><a href="https://policies.google.com/privacy">Google privacy policy</a> · <a href="https://www.waze.com/legal/privacy">Waze privacy policy</a></div>
-<div class="svc"><b>Google Play and Android</b><span>Google processes data for app installation and updates and for Android backup. If you allowed your device to share usage and diagnostics data with Google, Google may provide us with aggregated crash and performance statistics (Android vitals); this is controlled in Android settings, not by the app.</span><a href="https://policies.google.com/privacy">Google privacy policy</a></div>
+<div class="svc"><b>Google Play and Android</b><span>Google processes data for app installation and updates, for Android backup and, if you choose to leave a tip, for the purchase. If you allowed your device to share usage and diagnostics data with Google, Google may provide us with aggregated crash and performance statistics (Android vitals); this is controlled in Android settings, not by the app.</span><a href="https://policies.google.com/privacy">Google privacy policy</a></div>
 <p>Retention by these services is set by their policies; for example, Private.coffee keeps IP addresses in server logs for up to 48 hours, OpenFreeMap deletes error logs after 7 days.</p>
 
 <h3>8. Transfers outside the EU/EEA</h3>
 <ul>
   <li>Cloudflare, Inc. (USA) delivers the traffic of OpenFreeMap and Open Charge Map. Cloudflare participates in the EU-U.S. Data Privacy Framework.</li>
   <li>Mapbox, Inc. (USA) calculates routes. According to Mapbox, it participates in the EU-U.S. Data Privacy Framework.</li>
+  <li>Amazon Web Services, Inc. (USA) serves the Terrain Tiles. AWS participates in the EU-U.S. Data Privacy Framework.</li>
   <li>Google may process data worldwide according to its privacy policy.</li>
 </ul>
 
@@ -181,6 +194,8 @@
   <li><b>Requests to the map, station, address and routing services</b> (IP address, area, search text, route points): necessary to provide the features you use (Art. 6(1)(b)); for automatic loading of the map and stations also our legitimate interest in a working app (Art. 6(1)(f)).</li>
   <li><b>Storing settings on the device:</b> necessary for the features you use (Art. 6(1)(b)); storing this information on the device is strictly necessary for the service you requested (Art. 5(3) ePrivacy Directive).</li>
   <li><b>Handing data to other apps</b> (navigation, sharing): your instruction when you tap the button.</li>
+  <li><b>Tips:</b> performance of the purchase you make (Art. 6(1)(b)); the payment is processed by Google Play.</li>
+  <li><b>Usage counters on the device:</b> our legitimate interest in offering the tip window only to people who actually use the app, and not too often (Art. 6(1)(f)).</li>
 </ul>
 
 <h3>10. Your rights</h3>
@@ -203,12 +218,12 @@
 <!-- ============================== РУССКИЙ ============================== -->
 <section class="lang" id="ru" lang="ru">
 <h2>Политика конфиденциальности</h2>
-<p class="meta">Amperoute для Android (app.amperoute) · Дата вступления в силу: 16 октября 2026 г.</p>
+<p class="meta">Amperoute для Android (app.amperoute) · Дата вступления в силу: 17 октября 2026 г.</p>
 
 <h3>1. Коротко</h3>
 <ul>
   <li>В Amperoute нет аккаунтов, рекламы, аналитики, трекеров и сервисов отчётов о сбоях. Мы не продаём и не передаём данные за плату.</li>
-  <li>У нас, разработчика, нет своих серверов, и данные о вас к нам не поступают. Профиль авто, избранное, ваши цены и настройки хранятся только на вашем устройстве.</li>
+  <li>У нас, разработчика, нет своих серверов, и данные о вас к нам не поступают — кроме сведений о заказе, которые Google Play передаёт продавцам, если вы решите оставить чаевые (раздел 3.7). Профиль авто, избранное, ваши цены и настройки хранятся только на вашем устройстве.</li>
   <li>Чтобы показать карту, зарядные станции, подсказки адресов и маршруты, приложение напрямую обращается к сторонним сервисам из раздела 7. В запросах передаются область карты, точки маршрута или текст поиска и, как при любом запросе в интернет, ваш IP-адрес.</li>
   <li>Доступ к геолокации необязателен. Приложение использует местоположение только пока открыто и никогда — в фоне.</li>
   <li>Эта политика доступна и в приложении: «Моё авто» → «О данных» → «Политика конфиденциальности».</li>
@@ -225,11 +240,13 @@
 <ul>
   <li><b>OpenStreetMap:</b> запрос к Overpass API по ячейкам фиксированной сетки (каждая примерно 14 × 17 км), которые покрывают видимую область, или по прямоугольникам вдоль коридора маршрута. Используется overpass-api.de, а если он не отвечает — зеркало overpass.private.coffee.</li>
   <li><b>Open Charge Map:</b> те же ячейки сетки или линия маршрута (упрощённая, вместе с начальной и конечной точками) и расстояние поиска. В каждом запросе передаётся API-ключ: по умолчанию ключ приложения; если вы указали свой ключ в настройках, отправляется он, и Open Charge Map может связать эти запросы с вашим аккаунтом Open Charge Map.</li>
+  <li><b>Занятость в реальном времени (Германия, Нидерланды, Финляндия):</b> когда на карте видна область уровня улиц, и пока открыта карточка станции, приложение запрашивает текущее состояние зарядных мест в видимой области (или примерно в 500 м вокруг станции): для Германии — у MobiData BW, для Нидерландов — у NDW. Fintraffic отдаёт всю Финляндию одним файлом, без запроса по месту; приложение загружает его, только когда карта над Финляндией.</li>
 </ul>
 <h4>3.3 Поиск адресов</h4>
 <p>Когда вы вводите не меньше трёх символов в поле «Откуда» или «Куда», приложение отправляет в Photon введённый текст, язык интерфейса и, если вы разрешили геолокацию, последнее известное местоположение, округлённое до 0,1° (около 10 км), чтобы сначала предлагать места поблизости.</p>
 <h4>3.4 Маршрут</h4>
 <p>По нажатию «Построить маршрут» координаты начала и конца маршрута отправляются в Mapbox — он рассчитывает маршрут с учётом пробок; если Mapbox недоступен — на сервер маршрутизации OSRM. Приложение результат не сохраняет. Если началом (или, после перестановки точек, концом) маршрута выбрано «Моё местоположение», это ваше текущее точное местоположение.</p>
+<p>Чтобы оценить расход на маршруте, приложение также загружает высоты рельефа вдоль маршрута из Terrain Tiles (тайлы примерно 70 × 45 км, сохраняются на устройстве и используются повторно) и прогноз температуры для начала, середины и конца маршрута из MET Norway (координаты округлены до 0,1°, примерно 10 км).</p>
 <h4>3.5 Навигация, «Поделиться» и ссылки</h4>
 <p>Только когда вы нажимаете соответствующую кнопку:</p>
 <ul>
@@ -238,10 +255,15 @@
   <li><b>Другой навигатор:</b> координаты и название станции — в выбранное вами приложение.</li>
   <li><b>«Поделиться»:</b> название, адрес станции и ссылка на OpenStreetMap — в выбранное вами приложение.</li>
   <li><b>«Открыть / исправить» и «Получить ключ»:</b> в браузере открывается страница openstreetmap.org или openchargemap.org.</li>
+  <li><b>Приложение сети зарядки:</b> открывается приложение сети или, если оно не установлено, его страница в Google Play. Никакие данные ему не передаются. Чтобы решить, что открыть, приложение проверяет на устройстве, установлено ли оно; эти сведения не покидают устройство.</li>
+  <li><b>«Написать автору»:</b> открывается ваше почтовое приложение с нашим адресом; что отправить — решаете вы.</li>
 </ul>
 <p>С этого момента действует политика конфиденциальности другого приложения или сайта.</p>
 <h4>3.6 Технические данные</h4>
 <p>Любой запрос раскрывает ваш IP-адрес и время запроса. Запросы станций, адресов и маршрутов содержат идентификатор <code>Amperoute/1.0 (Android)</code>; запросы карты — идентификатор картографической библиотеки, в котором могут быть название и версия приложения и версия Android. Рекламный идентификатор, идентификаторы устройства, ваше имя, e-mail и контакты приложение не отправляет.</p>
+
+<h4>3.7 Чаевые (по желанию)</h4>
+<p>Если вы решите «угостить автора кофе», покупку целиком проводит Google Play по своим условиям и своей политике конфиденциальности. Ваши платёжные данные мы не видим. Приложение получает от Google Play только подтверждение покупки, чтобы её завершить. Как продавец мы получаем от Google сведения о заказе, которые Google передаёт всем продавцам (например, номер заказа, товар, цену и страну). К Google Play за ценами приложение обращается, только когда собирается показать окно чаевых или вы открываете его сами.</p>
 
 <h3 id="ru-location">4. Геолокация</h3>
 <ul>
@@ -254,8 +276,8 @@
 
 <h3>5. Что хранится на устройстве</h3>
 <ul>
-  <li><b>Файл настроек:</b> профиль авто (название, батарея, расход, мощность зарядки, разъёмы, пределы заряда), тарифы, цена топлива и валюта, фильтры станций, источник данных, тема, ваш API-ключ Open Charge Map (если указан), избранное (копия данных станций), ваши цены и заметки, последняя позиция карты.</li>
-  <li><b>Кэш:</b> недавно загруженные станции (отдельно для каждого источника) и тайлы карты — чтобы приложение работало быстрее и когда серверы недоступны.</li>
+  <li><b>Файл настроек:</b> профиль авто (название, батарея, расход, мощность зарядки, разъёмы, пределы заряда), тарифы, цена топлива и валюта, фильтры станций, источник данных, тема, ваш API-ключ Open Charge Map (если указан), избранное (копия данных станций), ваши цены и заметки, последняя позиция карты; отметка, что письмо автора уже показано; простые счётчики использования (дата первого запуска, число запусков и построенных маршрутов, когда последний раз показывалось окно чаевых) — только чтобы решить, когда предложить окно чаевых.</li>
+  <li><b>Кэш:</b> недавно загруженные станции (отдельно для каждого источника), тайлы высот рельефа и тайлы карты — чтобы приложение работало быстрее и когда серверы недоступны.</li>
   <li><b>Язык приложения</b> (Android 13 и новее) хранит система Android.</li>
   <li>Маршрут, результаты поиска и текущее местоположение находятся только в памяти, пока приложение запущено.</li>
   <li><b>Резервное копирование:</b> если на устройстве включено резервное копирование Android, система включает файл настроек (но не кэш) в резервную копию в вашем аккаунте Google и в перенос на новое устройство. Копиями управляет Google; на Android 9 и новее при заданной блокировке экрана они защищены сквозным шифрованием. У нас доступа к ним нет.</li>
@@ -278,14 +300,20 @@
 <div class="svc"><b>Photon — поиск адресов (photon.komoot.io)</b><span>komoot. Получает: текст поиска, язык, координаты, округлённые примерно до 10 км (если разрешено), IP-адрес.</span><a href="https://www.komoot.com/privacy">политика komoot</a></div>
 <div class="svc"><b>Mapbox — маршруты с учётом пробок (api.mapbox.com)</b><span>Mapbox, Inc., США. Получает: координаты начала и конца маршрута, токен доступа приложения, IP-адрес.</span><a href="https://www.mapbox.com/legal/privacy">политика Mapbox</a></div>
 <div class="svc"><b>OSRM — маршруты (router.project-osrm.org)</b><span>FOSSGIS e.V., Германия. Получает: координаты начала и конца маршрута, IP-адрес. По данным FOSSGIS, запросы маршрутов сохраняются в журнале сервера.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">политика FOSSGIS</a></div>
+<div class="svc"><b>MobiData BW — занятость в реальном времени, Германия (api.mobidata-bw.de)</b><span>Nahverkehrsgesellschaft Baden-Württemberg mbH (NVBW), Германия. Получает: видимую область карты или область вокруг станции, IP-адрес.</span><a href="https://www.mobidata-bw.de/pages/datenschutz">политика MobiData BW</a></div>
+<div class="svc"><b>NDW — занятость в реальном времени, Нидерланды (dotnl.ndw.nu)</b><span>Nationaal Dataportaal Wegverkeer, Нидерланды. Получает: видимую область карты или область вокруг станции, IP-адрес.</span><a href="https://www.ndw.nu/privacy">политика NDW</a></div>
+<div class="svc"><b>Fintraffic Digitraffic — занятость в реальном времени, Финляндия (afir.digitraffic.fi)</b><span>Fintraffic Oy, Финляндия. Получает: запрос данных всей страны (без местоположения), заголовок <code>Digitraffic-User: Amperoute/1.0</code>, IP-адрес.</span><a href="https://www.fintraffic.fi/en/fintraffic/privacy-policy">политика Fintraffic</a></div>
+<div class="svc"><b>Terrain Tiles — высоты рельефа (s3.amazonaws.com/elevation-tiles-prod)</b><span>Открытый набор данных в Registry of Open Data от Amazon Web Services; раздаёт Amazon Web Services, Inc., США. Получает: тайлы вдоль маршрута (каждый примерно 70 × 45 км), IP-адрес.</span><a href="https://aws.amazon.com/privacy/">политика AWS</a></div>
+<div class="svc"><b>MET Norway — прогноз температуры (api.met.no)</b><span>Метеорологический институт Норвегии. Получает: координаты начала, середины и конца маршрута, округлённые до 0,1° (примерно 10 км), идентификатор приложения со ссылкой на эту политику, IP-адрес.</span><a href="https://www.met.no/en/About-us/privacy">политика MET Norway</a></div>
 <div class="svc"><b>Google Maps, Waze</b><span>Google. Только если вы сами открываете станцию или маршрут в этих приложениях.</span><a href="https://policies.google.com/privacy">политика Google</a> · <a href="https://www.waze.com/legal/privacy">политика Waze</a></div>
-<div class="svc"><b>Google Play и Android</b><span>Google обрабатывает данные для установки и обновления приложения и для резервного копирования Android. Если вы разрешили устройству отправлять в Google данные об использовании и диагностике, Google может передавать нам обобщённую статистику сбоев и производительности (Android vitals); это настраивается в Android, а не в приложении.</span><a href="https://policies.google.com/privacy">политика Google</a></div>
+<div class="svc"><b>Google Play и Android</b><span>Google обрабатывает данные для установки и обновления приложения, для резервного копирования Android и, если вы решите оставить чаевые, для покупки. Если вы разрешили устройству отправлять в Google данные об использовании и диагностике, Google может передавать нам обобщённую статистику сбоев и производительности (Android vitals); это настраивается в Android, а не в приложении.</span><a href="https://policies.google.com/privacy">политика Google</a></div>
 <p>Сроки хранения у этих сервисов определяют их политики; например, Private.coffee хранит IP-адреса в журналах сервера до 48 часов, OpenFreeMap удаляет журналы ошибок через 7 дней.</p>
 
 <h3>8. Передача данных за пределы ЕС/ЕЭЗ</h3>
 <ul>
   <li>Трафик OpenFreeMap и Open Charge Map доставляет Cloudflare, Inc. (США). Cloudflare участвует в EU-U.S. Data Privacy Framework.</li>
   <li>Маршруты рассчитывает Mapbox, Inc. (США). По данным Mapbox, компания участвует в EU-U.S. Data Privacy Framework.</li>
+  <li>Terrain Tiles раздаёт Amazon Web Services, Inc. (США). AWS участвует в EU-U.S. Data Privacy Framework.</li>
   <li>Google может обрабатывать данные по всему миру согласно своей политике конфиденциальности.</li>
 </ul>
 
@@ -295,6 +323,8 @@
   <li><b>Запросы к сервисам карты, станций, адресов и маршрутов</b> (IP-адрес, область, текст поиска, точки маршрута): необходимы, чтобы предоставить функции, которыми вы пользуетесь (ст. 6(1)(b)); для автоматической загрузки карты и станций — также наш законный интерес в работающем приложении (ст. 6(1)(f)).</li>
   <li><b>Хранение настроек на устройстве:</b> необходимо для функций, которыми вы пользуетесь (ст. 6(1)(b)); сохранение этих сведений на устройстве строго необходимо для запрошенной вами услуги (ст. 5(3) Директивы ePrivacy).</li>
   <li><b>Передача данных другим приложениям</b> (навигация, «Поделиться»): ваше указание, когда вы нажимаете кнопку.</li>
+  <li><b>Чаевые:</b> исполнение совершаемой вами покупки (ст. 6(1)(b)); платёж обрабатывает Google Play.</li>
+  <li><b>Счётчики использования на устройстве:</b> наш законный интерес предлагать окно чаевых только тем, кто правда пользуется приложением, и не слишком часто (ст. 6(1)(f)).</li>
 </ul>
 
 <h3>10. Ваши права</h3>
@@ -317,12 +347,12 @@
 <!-- ============================== DEUTSCH ============================== -->
 <section class="lang" id="de" lang="de">
 <h2>Datenschutzerklärung</h2>
-<p class="meta">Amperoute für Android (app.amperoute) · Gültig ab: 16. Oktober 2026</p>
+<p class="meta">Amperoute für Android (app.amperoute) · Gültig ab: 17. Oktober 2026</p>
 
 <h3>1. Kurz zusammengefasst</h3>
 <ul>
   <li>Amperoute hat keine Nutzerkonten, zeigt keine Werbung und enthält keine Analyse-, Tracking- oder Absturzberichts-Tools. Wir verkaufen oder vermieten keine Daten.</li>
-  <li>Wir als Entwickler betreiben keine Server und erhalten keine Daten über Sie. Fahrzeugprofil, Favoriten, Ihre Preise und Einstellungen werden nur auf Ihrem Gerät gespeichert.</li>
+  <li>Wir als Entwickler betreiben keine Server und erhalten keine Daten über Sie – außer den Bestelldaten, die Google Play Verkäufern übermittelt, wenn Sie sich für ein Trinkgeld entscheiden (Abschnitt 3.7). Fahrzeugprofil, Favoriten, Ihre Preise und Einstellungen werden nur auf Ihrem Gerät gespeichert.</li>
   <li>Um Karte, Ladestationen, Adressvorschläge und Routen anzuzeigen, verbindet sich die App direkt mit den Drittdiensten aus Abschnitt 7. Diese Anfragen enthalten den Kartenausschnitt, Routenpunkte oder den Suchtext und, wie jede Internetanfrage, Ihre IP-Adresse.</li>
   <li>Der Standortzugriff ist freiwillig. Die App nutzt Ihren Standort nur, solange sie geöffnet ist, nie im Hintergrund.</li>
   <li>Diese Datenschutzerklärung finden Sie auch in der App: „Mein Auto“ → „Über die Daten“ → „Datenschutzerklärung“.</li>
@@ -339,11 +369,13 @@
 <ul>
   <li><b>OpenStreetMap:</b> eine Anfrage an die Overpass API für die Zellen eines festen Rasters (je etwa 14 × 17 km), die den sichtbaren Bereich abdecken, oder für Rechtecke entlang des Routenkorridors. Die App nutzt overpass-api.de und, wenn dieser Server nicht antwortet, den Spiegel overpass.private.coffee.</li>
   <li><b>Open Charge Map:</b> dieselben Rasterzellen oder die Routenlinie (vereinfacht, einschließlich Start- und Endpunkt) mit dem Suchabstand. Jede Anfrage enthält einen API-Schlüssel: standardmäßig den Schlüssel der App; haben Sie in den Einstellungen einen eigenen Schlüssel eingegeben, wird dieser gesendet, und Open Charge Map kann die Anfragen Ihrem Open-Charge-Map-Konto zuordnen.</li>
+  <li><b>Echtzeit-Belegung (Deutschland, Niederlande, Finnland):</b> Zeigt die Karte einen Ausschnitt auf Straßenebene, und solange eine Stationskarte geöffnet ist, fragt die App den aktuellen Zustand der Ladepunkte im sichtbaren Bereich (oder etwa 500 m um die Station) ab: für Deutschland bei MobiData BW, für die Niederlande bei NDW. Fintraffic liefert ganz Finnland in einer Datei ohne Ortsabfrage; die App lädt sie nur, wenn die Karte über Finnland steht.</li>
 </ul>
 <h4>3.3 Adresssuche</h4>
 <p>Wenn Sie mindestens drei Zeichen in das Feld „Von“ oder „Nach“ eingeben, sendet die App den eingegebenen Text, die Sprache der Oberfläche und, falls Sie den Standortzugriff erlaubt haben, Ihren zuletzt bekannten Standort, gerundet auf 0,1° (etwa 10 km), an Photon, damit Orte in der Nähe zuerst vorgeschlagen werden.</p>
 <h4>3.4 Route</h4>
 <p>Wenn Sie auf „Route berechnen“ tippen, werden die Koordinaten von Start und Ziel an Mapbox gesendet, das die Route mit aktueller Verkehrslage berechnet; ist Mapbox nicht erreichbar, an den Routing-Server OSRM. Die App speichert das Ergebnis nicht. Ist „Mein Standort“ der Start (oder nach dem Tauschen das Ziel), ist das Ihr aktueller genauer Standort.</p>
+<p>Um den Verbrauch auf der Route abzuschätzen, lädt die App außerdem Geländehöhen entlang der Route aus Terrain Tiles (Kacheln von etwa 70 × 45 km, auf dem Gerät gespeichert und wiederverwendet) und die Temperaturvorhersage für Start, Mitte und Ziel der Route von MET Norway (Koordinaten auf 0,1° gerundet, etwa 10 km).</p>
 <h4>3.5 Navigation, Teilen und Links</h4>
 <p>Nur wenn Sie auf die entsprechende Schaltfläche tippen:</p>
 <ul>
@@ -352,10 +384,15 @@
   <li><b>Andere Navigations-App:</b> Koordinaten und Name der Station an die von Ihnen gewählte App.</li>
   <li><b>Teilen:</b> Name und Adresse der Station und ein OpenStreetMap-Link an die von Ihnen gewählte App.</li>
   <li><b>„Öffnen / korrigieren“ und „Schlüssel anfordern“:</b> Im Browser öffnet sich eine Seite auf openstreetmap.org oder openchargemap.org.</li>
+  <li><b>App eines Ladenetzes:</b> Die App des Netzes öffnet sich oder, wenn sie nicht installiert ist, ihre Seite bei Google Play. Es werden keine Daten an sie übergeben. Um zu entscheiden, was geöffnet wird, prüft die App auf dem Gerät, ob die App installiert ist; diese Information verlässt das Gerät nicht.</li>
+  <li><b>„Dem Entwickler schreiben“:</b> Ihre E-Mail-App öffnet sich mit unserer Adresse; was Sie senden, entscheiden Sie.</li>
 </ul>
 <p>Ab diesem Moment gilt die Datenschutzerklärung der anderen App oder Website.</p>
 <h4>3.6 Technische Daten</h4>
 <p>Jede Anfrage übermittelt Ihre IP-Adresse und den Zeitpunkt. Anfragen nach Stationen, Adressen und Routen tragen die Kennung <code>Amperoute/1.0 (Android)</code>; Kartenanfragen die Kennung der Kartenbibliothek, die Name und Version der App sowie die Android-Version enthalten kann. Werbe-ID, Gerätekennungen, Ihr Name, Ihre E-Mail-Adresse oder Kontakte werden nicht gesendet.</p>
+
+<h4>3.7 Trinkgeld (freiwillig)</h4>
+<p>Wenn Sie dem Entwickler „einen Kaffee spendieren“, wickelt Google Play den Kauf vollständig nach den eigenen Bedingungen und der eigenen Datenschutzerklärung ab. Ihre Zahlungsdaten sehen wir nie. Die App erhält von Google Play nur die Bestätigung des Kaufs, um ihn abzuschließen. Als Verkäufer erhalten wir von Google die Bestelldaten, die Google allen Verkäufern übermittelt (zum Beispiel Bestellnummer, Artikel, Preis und Land). Die Preise fragt die App bei Google Play nur ab, wenn sie das Trinkgeld-Fenster gleich anzeigen will oder Sie es selbst öffnen.</p>
 
 <h3 id="de-location">4. Standort</h3>
 <ul>
@@ -368,8 +405,8 @@
 
 <h3>5. Auf Ihrem Gerät gespeicherte Daten</h3>
 <ul>
-  <li><b>Einstellungsdatei:</b> Fahrzeugprofil (Name, Akku, Verbrauch, Ladeleistung, Anschlüsse, Ladegrenzen), Tarife, Kraftstoffpreis und Währung, Stationsfilter, Datenquelle, Design, Ihr Open-Charge-Map-API-Schlüssel (falls eingegeben), Favoriten (Kopie der Stationsdaten), Ihre Preise und Notizen sowie die letzte Kartenposition.</li>
-  <li><b>Cache:</b> zuletzt geladene Stationen (getrennt nach Datenquelle) und Kartenkacheln, damit die App schneller ist und auch funktioniert, wenn die Server nicht erreichbar sind.</li>
+  <li><b>Einstellungsdatei:</b> Fahrzeugprofil (Name, Akku, Verbrauch, Ladeleistung, Anschlüsse, Ladegrenzen), Tarife, Kraftstoffpreis und Währung, Stationsfilter, Datenquelle, Design, Ihr Open-Charge-Map-API-Schlüssel (falls eingegeben), Favoriten (Kopie der Stationsdaten), Ihre Preise und Notizen sowie die letzte Kartenposition; ob der Brief des Entwicklers schon angezeigt wurde; einfache Nutzungszähler (Datum des ersten Starts, Anzahl der Starts und berechneten Routen, wann das Trinkgeld-Fenster zuletzt angezeigt wurde), nur um zu entscheiden, wann das Trinkgeld-Fenster angeboten wird.</li>
+  <li><b>Cache:</b> zuletzt geladene Stationen (getrennt nach Datenquelle), Kartenkacheln und Kacheln mit Geländehöhen, damit die App schneller ist und auch funktioniert, wenn die Server nicht erreichbar sind.</li>
   <li><b>App-Sprache</b> (ab Android 13): wird vom Android-System gespeichert.</li>
   <li>Routen, Suchergebnisse und Ihr aktueller Standort befinden sich nur im Arbeitsspeicher, solange die App läuft.</li>
   <li><b>Sicherung:</b> Ist die Android-Sicherung auf Ihrem Gerät aktiviert, nimmt Android die Einstellungsdatei (nicht den Cache) in die Sicherung in Ihrem Google-Konto und in die Übertragung auf ein neues Gerät auf. Sicherungen verwaltet Google; ab Android 9 mit Displaysperre sind sie Ende-zu-Ende-verschlüsselt. Wir haben keinen Zugriff darauf.</li>
@@ -392,14 +429,20 @@
 <div class="svc"><b>Photon — Adresssuche (photon.komoot.io)</b><span>komoot. Erhält: Suchtext, Sprache, auf etwa 10 km gerundete Position (falls erlaubt), IP-Adresse.</span><a href="https://www.komoot.com/privacy">Datenschutzerklärung komoot</a></div>
 <div class="svc"><b>Mapbox — Routen mit Verkehrslage (api.mapbox.com)</b><span>Mapbox, Inc., USA. Erhält: Koordinaten von Start und Ziel, das Zugriffstoken der App, IP-Adresse.</span><a href="https://www.mapbox.com/legal/privacy">Datenschutzerklärung Mapbox</a></div>
 <div class="svc"><b>OSRM — Routen (router.project-osrm.org)</b><span>FOSSGIS e.V., Deutschland. Erhält: Koordinaten von Start und Ziel, IP-Adresse. Laut FOSSGIS werden Routenanfragen im Serverprotokoll gespeichert.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">Datenschutzerklärung FOSSGIS</a></div>
+<div class="svc"><b>MobiData BW — Echtzeit-Belegung, Deutschland (api.mobidata-bw.de)</b><span>Nahverkehrsgesellschaft Baden-Württemberg mbH (NVBW), Deutschland. Erhält: sichtbaren Kartenausschnitt oder Bereich um eine Station, IP-Adresse.</span><a href="https://www.mobidata-bw.de/pages/datenschutz">Datenschutzerklärung MobiData BW</a></div>
+<div class="svc"><b>NDW — Echtzeit-Belegung, Niederlande (dotnl.ndw.nu)</b><span>Nationaal Dataportaal Wegverkeer, Niederlande. Erhält: sichtbaren Kartenausschnitt oder Bereich um eine Station, IP-Adresse.</span><a href="https://www.ndw.nu/privacy">Datenschutzerklärung NDW</a></div>
+<div class="svc"><b>Fintraffic Digitraffic — Echtzeit-Belegung, Finnland (afir.digitraffic.fi)</b><span>Fintraffic Oy, Finnland. Erhält: Abfrage der Daten des ganzen Landes (ohne Standort), den Header <code>Digitraffic-User: Amperoute/1.0</code>, IP-Adresse.</span><a href="https://www.fintraffic.fi/en/fintraffic/privacy-policy">Datenschutzerklärung Fintraffic</a></div>
+<div class="svc"><b>Terrain Tiles — Geländehöhen (s3.amazonaws.com/elevation-tiles-prod)</b><span>Offener Datensatz in der Registry of Open Data von Amazon Web Services; ausgeliefert von Amazon Web Services, Inc., USA. Erhält: die Kacheln entlang der Route (je etwa 70 × 45 km), IP-Adresse.</span><a href="https://aws.amazon.com/privacy/">Datenschutzhinweis AWS</a></div>
+<div class="svc"><b>MET Norway — Temperaturvorhersage (api.met.no)</b><span>Norwegisches Meteorologisches Institut, Norwegen. Erhält: Koordinaten von Start, Mitte und Ziel der Route, auf 0,1° gerundet (etwa 10 km), die Kennung der App mit Link zu dieser Erklärung, IP-Adresse.</span><a href="https://www.met.no/en/About-us/privacy">Datenschutzerklärung MET Norway</a></div>
 <div class="svc"><b>Google Maps, Waze</b><span>Google. Nur wenn Sie eine Station oder Route selbst in diesen Apps öffnen.</span><a href="https://policies.google.com/privacy">Datenschutzerklärung Google</a> · <a href="https://www.waze.com/legal/privacy">Datenschutzerklärung Waze</a></div>
-<div class="svc"><b>Google Play und Android</b><span>Google verarbeitet Daten für Installation und Updates der App sowie für die Android-Sicherung. Wenn Sie Ihrem Gerät erlaubt haben, Nutzungs- und Diagnosedaten an Google zu senden, kann Google uns zusammengefasste Absturz- und Leistungsstatistiken (Android vitals) bereitstellen; das wird in den Android-Einstellungen gesteuert, nicht in der App.</span><a href="https://policies.google.com/privacy">Datenschutzerklärung Google</a></div>
+<div class="svc"><b>Google Play und Android</b><span>Google verarbeitet Daten für Installation und Updates der App, für die Android-Sicherung und, wenn Sie ein Trinkgeld geben, für den Kauf. Wenn Sie Ihrem Gerät erlaubt haben, Nutzungs- und Diagnosedaten an Google zu senden, kann Google uns zusammengefasste Absturz- und Leistungsstatistiken (Android vitals) bereitstellen; das wird in den Android-Einstellungen gesteuert, nicht in der App.</span><a href="https://policies.google.com/privacy">Datenschutzerklärung Google</a></div>
 <p>Die Speicherdauer bei diesen Diensten richtet sich nach deren Regeln; zum Beispiel speichert Private.coffee IP-Adressen in Serverprotokollen bis zu 48 Stunden, OpenFreeMap löscht Fehlerprotokolle nach 7 Tagen.</p>
 
 <h3>8. Übermittlung außerhalb der EU/des EWR</h3>
 <ul>
   <li>Den Datenverkehr von OpenFreeMap und Open Charge Map liefert Cloudflare, Inc. (USA) aus. Cloudflare nimmt am EU-U.S. Data Privacy Framework teil.</li>
   <li>Routen berechnet Mapbox, Inc. (USA). Nach Angaben von Mapbox nimmt das Unternehmen am EU-U.S. Data Privacy Framework teil.</li>
+  <li>Die Terrain Tiles liefert Amazon Web Services, Inc. (USA) aus. AWS nimmt am EU-U.S. Data Privacy Framework teil.</li>
   <li>Google kann Daten gemäß seiner Datenschutzerklärung weltweit verarbeiten.</li>
 </ul>
 
@@ -409,6 +452,8 @@
   <li><b>Anfragen an Karten-, Stations-, Adress- und Routingdienste</b> (IP-Adresse, Bereich, Suchtext, Routenpunkte): erforderlich, um die von Ihnen genutzten Funktionen bereitzustellen (Art. 6 Abs. 1 lit. b); für das automatische Laden von Karte und Stationen außerdem unser berechtigtes Interesse an einer funktionierenden App (Art. 6 Abs. 1 lit. f).</li>
   <li><b>Speicherung der Einstellungen auf dem Gerät:</b> erforderlich für die von Ihnen genutzten Funktionen (Art. 6 Abs. 1 lit. b); die Speicherung dieser Informationen auf dem Gerät ist für den von Ihnen gewünschten Dienst unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG, Art. 5 Abs. 3 ePrivacy-Richtlinie).</li>
   <li><b>Weitergabe an andere Apps</b> (Navigation, Teilen): Ihre Anweisung durch Tippen auf die Schaltfläche.</li>
+  <li><b>Trinkgeld:</b> Erfüllung des von Ihnen getätigten Kaufs (Art. 6 Abs. 1 lit. b); die Zahlung verarbeitet Google Play.</li>
+  <li><b>Nutzungszähler auf dem Gerät:</b> unser berechtigtes Interesse, das Trinkgeld-Fenster nur Menschen anzubieten, die die App wirklich nutzen, und nicht zu oft (Art. 6 Abs. 1 lit. f).</li>
 </ul>
 
 <h3>10. Ihre Rechte</h3>
@@ -431,12 +476,12 @@
 <!-- ============================== FRANÇAIS ============================== -->
 <section class="lang" id="fr" lang="fr">
 <h2>Politique de confidentialité</h2>
-<p class="meta">Amperoute pour Android (app.amperoute) · Date d’effet : 16 octobre 2026</p>
+<p class="meta">Amperoute pour Android (app.amperoute) · Date d’effet : 17 octobre 2026</p>
 
 <h3>1. En bref</h3>
 <ul>
   <li>Amperoute n’a pas de comptes utilisateur, n’affiche pas de publicité et ne contient aucun outil d’analyse d’audience, de pistage ou de rapport de plantage. Nous ne vendons ni ne louons aucune donnée.</li>
-  <li>Nous, le développeur, n’exploitons aucun serveur et ne recevons aucune donnée vous concernant. Le profil du véhicule, les favoris, vos prix et vos réglages sont enregistrés uniquement sur votre appareil.</li>
+  <li>Nous, le développeur, n’exploitons aucun serveur et ne recevons aucune donnée vous concernant, sauf les informations de commande que Google Play fournit aux vendeurs si vous choisissez de laisser un pourboire (section 3.7). Le profil du véhicule, les favoris, vos prix et vos réglages sont enregistrés uniquement sur votre appareil.</li>
   <li>Pour afficher la carte, les bornes, les suggestions d’adresses et les itinéraires, l’app se connecte directement aux services tiers listés à la section 7. Ces requêtes contiennent la zone de carte, les points de l’itinéraire ou le texte recherché et, comme toute requête sur Internet, votre adresse IP.</li>
   <li>L’accès à la position est facultatif. L’app n’utilise votre position que lorsqu’elle est ouverte, jamais en arrière-plan.</li>
   <li>Cette politique est aussi accessible dans l’app : « Ma voiture » → « À propos des données » → « Politique de confidentialité ».</li>
@@ -453,11 +498,13 @@
 <ul>
   <li><b>OpenStreetMap :</b> une requête à l’API Overpass pour les cellules d’une grille fixe (d’environ 14 × 17 km chacune) qui couvrent la zone visible, ou pour des rectangles le long du couloir de l’itinéraire. L’app utilise overpass-api.de et, s’il ne répond pas, le miroir overpass.private.coffee.</li>
   <li><b>Open Charge Map :</b> les mêmes cellules de la grille, ou la ligne de l’itinéraire (simplifiée, avec ses points de départ et d’arrivée) et la distance de recherche. Chaque requête contient une clé API : par défaut celle de l’app ; si vous avez saisi votre propre clé dans les réglages, c’est elle qui est envoyée, ce qui permet à Open Charge Map de relier ces requêtes à votre compte Open Charge Map.</li>
+  <li><b>Disponibilité en temps réel (Allemagne, Pays-Bas, Finlande) :</b> lorsque la carte montre une zone à l’échelle des rues, et tant qu’une fiche de borne est ouverte, l’app demande l’état actuel des points de recharge de la zone visible (ou d’environ 500 m autour de la borne) : à MobiData BW pour l’Allemagne, à NDW pour les Pays-Bas. Fintraffic fournit toute la Finlande en un seul fichier, sans requête de position ; l’app ne le télécharge que lorsque la carte est au-dessus de la Finlande.</li>
 </ul>
 <h4>3.3 Recherche d’adresses</h4>
 <p>Lorsque vous saisissez au moins trois caractères dans le champ « Départ » ou « Arrivée », l’app envoie à Photon le texte saisi, la langue de l’interface et, si vous avez autorisé la localisation, votre dernière position connue arrondie à 0,1° (environ 10 km), afin de proposer d’abord les lieux proches.</p>
 <h4>3.4 Itinéraire</h4>
 <p>Lorsque vous touchez « Calculer l’itinéraire », les coordonnées du départ et de l’arrivée sont envoyées à Mapbox, qui calcule l’itinéraire avec le trafic en temps réel ; si Mapbox est indisponible, au serveur de calcul d’itinéraire OSRM. L’app ne conserve pas le résultat. Si « Ma position » est le départ (ou l’arrivée après inversion des points), il s’agit de votre position précise actuelle.</p>
+<p>Pour estimer la consommation sur l’itinéraire, l’app charge aussi l’altitude du relief le long de l’itinéraire depuis Terrain Tiles (tuiles d’environ 70 × 45 km, conservées sur l’appareil et réutilisées) et la prévision de température pour le départ, le milieu et l’arrivée depuis MET Norway (coordonnées arrondies à 0,1°, environ 10 km).</p>
 <h4>3.5 Navigation, partage et liens</h4>
 <p>Uniquement lorsque vous touchez le bouton correspondant :</p>
 <ul>
@@ -466,10 +513,15 @@
   <li><b>Autre app de navigation :</b> les coordonnées et le nom de la borne, transmis à l’app que vous choisissez.</li>
   <li><b>Partager :</b> le nom et l’adresse de la borne et un lien OpenStreetMap, transmis à l’app que vous choisissez.</li>
   <li><b>« Ouvrir / corriger » et « Obtenir une clé » :</b> une page d’openstreetmap.org ou d’openchargemap.org s’ouvre dans votre navigateur.</li>
+  <li><b>App d’un réseau de recharge :</b> l’app du réseau s’ouvre ou, si elle n’est pas installée, sa page sur Google Play. Aucune donnée ne lui est transmise. Pour choisir quoi ouvrir, l’app vérifie sur l’appareil si l’app est installée ; cette information ne quitte pas l’appareil.</li>
+  <li><b>« Écrire à l’auteur » :</b> votre app de messagerie s’ouvre avec notre adresse ; vous décidez de ce que vous envoyez.</li>
 </ul>
 <p>À partir de ce moment, la politique de confidentialité de l’autre app ou du site s’applique.</p>
 <h4>3.6 Données techniques</h4>
 <p>Chaque requête révèle votre adresse IP et l’heure de la requête. Les requêtes de bornes, d’adresses et d’itinéraires portent l’identifiant <code>Amperoute/1.0 (Android)</code> ; les requêtes de carte portent l’identifiant de la bibliothèque cartographique, qui peut inclure le nom et la version de l’app et la version d’Android. L’app n’envoie ni identifiant publicitaire, ni identifiants de l’appareil, ni votre nom, votre adresse e-mail ou vos contacts.</p>
+
+<h4>3.7 Pourboire (facultatif)</h4>
+<p>Si vous choisissez d’« offrir un café » à l’auteur, l’achat est entièrement géré par Google Play selon ses propres conditions et sa politique de confidentialité. Nous ne voyons jamais vos données de paiement. L’app reçoit seulement la confirmation de l’achat par Google Play afin de le finaliser. En tant que vendeur, nous recevons de Google les informations de commande que Google fournit à tous les vendeurs (par exemple le numéro de commande, l’article, le prix et le pays). L’app ne contacte Google Play pour afficher les prix que lorsqu’elle s’apprête à montrer la fenêtre de pourboire ou que vous l’ouvrez vous-même.</p>
 
 <h3 id="fr-location">4. Localisation</h3>
 <ul>
@@ -482,8 +534,8 @@
 
 <h3>5. Données enregistrées sur votre appareil</h3>
 <ul>
-  <li><b>Fichier de réglages :</b> profil du véhicule (nom, batterie, consommation, puissance de recharge, prises, limites de charge), tarifs, prix du carburant et devise, filtres de bornes, source de données, thème, votre clé API Open Charge Map (si saisie), favoris (copie des données des bornes), vos prix et notes, et la dernière position de la carte.</li>
-  <li><b>Cache :</b> bornes chargées récemment (séparément pour chaque source de données) et tuiles de carte, pour que l’app soit plus rapide et fonctionne quand les serveurs sont injoignables.</li>
+  <li><b>Fichier de réglages :</b> profil du véhicule (nom, batterie, consommation, puissance de recharge, prises, limites de charge), tarifs, prix du carburant et devise, filtres de bornes, source de données, thème, votre clé API Open Charge Map (si saisie), favoris (copie des données des bornes), vos prix et notes, et la dernière position de la carte ; si la lettre de l’auteur a déjà été affichée ; de simples compteurs d’utilisation (date du premier lancement, nombre de lancements et d’itinéraires calculés, date du dernier affichage de la fenêtre de pourboire), utilisés uniquement pour décider quand proposer cette fenêtre.</li>
+  <li><b>Cache :</b> bornes chargées récemment (séparément pour chaque source de données), tuiles de carte et tuiles d’altitude du relief, pour que l’app soit plus rapide et fonctionne quand les serveurs sont injoignables.</li>
   <li><b>Langue de l’app</b> (Android 13 et plus récent) : enregistrée par le système Android.</li>
   <li>Les itinéraires, résultats de recherche et votre position actuelle ne sont conservés qu’en mémoire pendant l’exécution de l’app.</li>
   <li><b>Sauvegarde :</b> si la sauvegarde Android est activée sur votre appareil, Android inclut le fichier de réglages (pas le cache) dans la sauvegarde sur votre compte Google et dans le transfert vers un nouvel appareil. Les sauvegardes sont gérées par Google ; à partir d’Android 9 avec un verrouillage d’écran, elles sont chiffrées de bout en bout. Nous n’y avons pas accès.</li>
@@ -506,14 +558,20 @@
 <div class="svc"><b>Photon — recherche d’adresses (photon.komoot.io)</b><span>komoot. Reçoit : texte recherché, langue, position arrondie à environ 10 km (si autorisée), adresse IP.</span><a href="https://www.komoot.com/privacy">politique de komoot</a></div>
 <div class="svc"><b>Mapbox — itinéraires avec trafic (api.mapbox.com)</b><span>Mapbox, Inc., États-Unis. Reçoit : coordonnées du départ et de l’arrivée, jeton d’accès de l’app, adresse IP.</span><a href="https://www.mapbox.com/legal/privacy">politique de confidentialité Mapbox</a></div>
 <div class="svc"><b>OSRM — itinéraires (router.project-osrm.org)</b><span>FOSSGIS e.V., Allemagne. Reçoit : coordonnées du départ et de l’arrivée, adresse IP. Selon FOSSGIS, les requêtes d’itinéraire sont enregistrées dans le journal du serveur.</span><a href="https://www.fossgis.de/datenschutzerkl%C3%A4rung/">politique de FOSSGIS</a></div>
+<div class="svc"><b>MobiData BW — disponibilité en temps réel, Allemagne (api.mobidata-bw.de)</b><span>Nahverkehrsgesellschaft Baden-Württemberg mbH (NVBW), Allemagne. Reçoit : la zone visible de la carte ou la zone autour d’une borne, adresse IP.</span><a href="https://www.mobidata-bw.de/pages/datenschutz">politique de confidentialité MobiData BW</a></div>
+<div class="svc"><b>NDW — disponibilité en temps réel, Pays-Bas (dotnl.ndw.nu)</b><span>Nationaal Dataportaal Wegverkeer, Pays-Bas. Reçoit : la zone visible de la carte ou la zone autour d’une borne, adresse IP.</span><a href="https://www.ndw.nu/privacy">déclaration de confidentialité NDW</a></div>
+<div class="svc"><b>Fintraffic Digitraffic — disponibilité en temps réel, Finlande (afir.digitraffic.fi)</b><span>Fintraffic Oy, Finlande. Reçoit : une requête des données de tout le pays (sans position), l’en-tête <code>Digitraffic-User: Amperoute/1.0</code>, adresse IP.</span><a href="https://www.fintraffic.fi/en/fintraffic/privacy-policy">politique de confidentialité Fintraffic</a></div>
+<div class="svc"><b>Terrain Tiles — altitude du relief (s3.amazonaws.com/elevation-tiles-prod)</b><span>Jeu de données ouvert du Registry of Open Data d’Amazon Web Services ; servi par Amazon Web Services, Inc., États-Unis. Reçoit : les tuiles le long de l’itinéraire (chacune d’environ 70 × 45 km), adresse IP.</span><a href="https://aws.amazon.com/privacy/">avis de confidentialité AWS</a></div>
+<div class="svc"><b>MET Norway — prévision de température (api.met.no)</b><span>Institut météorologique norvégien, Norvège. Reçoit : les coordonnées du départ, du milieu et de l’arrivée arrondies à 0,1° (environ 10 km), l’identifiant de l’app avec un lien vers cette politique, adresse IP.</span><a href="https://www.met.no/en/About-us/privacy">déclaration de confidentialité MET Norway</a></div>
 <div class="svc"><b>Google Maps, Waze</b><span>Google. Uniquement si vous choisissez d’ouvrir une borne ou un itinéraire dans ces apps.</span><a href="https://policies.google.com/privacy">règles de confidentialité de Google</a> · <a href="https://www.waze.com/legal/privacy">politique de Waze</a></div>
-<div class="svc"><b>Google Play et Android</b><span>Google traite des données pour l’installation et les mises à jour de l’app et pour la sauvegarde Android. Si vous avez autorisé votre appareil à partager des données d’utilisation et de diagnostic avec Google, Google peut nous fournir des statistiques agrégées de plantages et de performances (Android vitals) ; ce réglage se fait dans Android, pas dans l’app.</span><a href="https://policies.google.com/privacy">règles de confidentialité de Google</a></div>
+<div class="svc"><b>Google Play et Android</b><span>Google traite des données pour l’installation et les mises à jour de l’app, pour la sauvegarde Android et, si vous choisissez de laisser un pourboire, pour l’achat. Si vous avez autorisé votre appareil à partager des données d’utilisation et de diagnostic avec Google, Google peut nous fournir des statistiques agrégées de plantages et de performances (Android vitals) ; ce réglage se fait dans Android, pas dans l’app.</span><a href="https://policies.google.com/privacy">règles de confidentialité de Google</a></div>
 <p>La durée de conservation par ces services dépend de leurs règles ; par exemple, Private.coffee conserve les adresses IP dans les journaux du serveur jusqu’à 48 heures, OpenFreeMap supprime les journaux d’erreurs au bout de 7 jours.</p>
 
 <h3>8. Transferts hors de l’UE/EEE</h3>
 <ul>
   <li>Le trafic d’OpenFreeMap et d’Open Charge Map est diffusé par Cloudflare, Inc. (États-Unis). Cloudflare participe au EU-U.S. Data Privacy Framework.</li>
   <li>Les itinéraires sont calculés par Mapbox, Inc. (États-Unis). Selon Mapbox, la société participe au EU-U.S. Data Privacy Framework.</li>
+  <li>Les Terrain Tiles sont servies par Amazon Web Services, Inc. (États-Unis). AWS participe au EU-U.S. Data Privacy Framework.</li>
   <li>Google peut traiter des données dans le monde entier conformément à ses règles de confidentialité.</li>
 </ul>
 
@@ -523,6 +581,8 @@
   <li><b>Requêtes aux services de carte, de bornes, d’adresses et d’itinéraires</b> (adresse IP, zone, texte recherché, points de l’itinéraire) : nécessaires pour fournir les fonctions que vous utilisez (art. 6, par. 1, b) ; pour le chargement automatique de la carte et des bornes, également notre intérêt légitime à proposer une app qui fonctionne (art. 6, par. 1, f).</li>
   <li><b>Enregistrement des réglages sur l’appareil :</b> nécessaire aux fonctions que vous utilisez (art. 6, par. 1, b) ; l’enregistrement de ces informations sur l’appareil est strictement nécessaire au service que vous avez demandé (art. 5, par. 3 de la directive ePrivacy, art. 82 de la loi Informatique et Libertés).</li>
   <li><b>Transmission à d’autres apps</b> (navigation, partage) : votre instruction lorsque vous touchez le bouton.</li>
+  <li><b>Pourboire :</b> exécution de l’achat que vous effectuez (art. 6(1)(b)) ; le paiement est traité par Google Play.</li>
+  <li><b>Compteurs d’utilisation sur l’appareil :</b> notre intérêt légitime à ne proposer la fenêtre de pourboire qu’aux personnes qui utilisent vraiment l’app, et pas trop souvent (art. 6(1)(f)).</li>
 </ul>
 
 <h3>10. Vos droits</h3>
